@@ -1,0 +1,181 @@
+# This "input" configures a global authorization rule to enable public access to
+# all models in this schema. Learn more about authorization rules here: https://docs.amplify.aws/cli/graphql/authorization-rules
+input AMPLIFY { globalAuthRule: AuthRule = { allow: public } } # FOR TESTING ONLY!
+
+#type Blog @model {
+#  id: ID!
+#  name: String!
+#  posts: [Post] @hasMany
+#}
+
+#type Post @model {
+#  id: ID!
+#  title: String!
+#  blog: Blog @belongsTo
+#  comments: [Comment] @hasMany
+#}
+
+#type Comment @model {
+#  id: ID!
+#  post: Post @belongsTo
+#  content: String!
+#}
+
+################################ 
+# USERS
+################################ 
+type Users @model @auth(rules: [{ allow: public }]) {
+  idUser: ID! #email
+  name: String!
+  validated: Boolean @default(value: "false")
+  hasAdminAccess: Boolean @default(value: "false")  # Esto es para identificar los usuarios que tienen acceso al modulo admin
+  perfil: UserProfile @default(value: "basic")
+  Geo: Geo
+  Company: Companies @belongsTo
+  PageUsers: [Pages] @manyToMany(relationName: "PageUsers")
+  Posts: [Posts] @hasMany
+}
+type UserAccess @model @auth(rules: [{ allow: public }]) {
+  id: ID! 
+  idUser: String! #user-email
+  module: TypeOfModule @default(value: "none")
+  date: String!
+  day: String!                        # Se usa para los filtros del admin
+  month: String!                      # Se usa para los filtros del admin
+  year: String @default(value: " ")   # Se usa para los filtros del admin
+  hour: String @default(value: " ")   # Se usa para los filtros del admin
+}
+
+
+
+enum UserProfile {
+  admin
+  subadmin
+  contentCreator
+  basic
+}
+enum TypeOfModule {
+  none
+  newJobs
+  newNews
+  newAdvertisements
+  newSchedules
+  newProjects
+  login
+  logout
+  dashboard
+  profile
+  support
+  listNews
+  listUsers
+  reportPage
+}
+################################ 
+# RESUMEN DASHBOARD
+################################ 
+type ResumeDashboard @model @searchable @auth(rules: [{ allow: public }]) {
+  id: ID!
+  name: String!
+  type: PostType @default(value: "none")
+  count: Float
+  isAll: Boolean @default(value: "false")
+  idLocation: String @default(value: "")
+  day: String!                        # Se usa para los filtros del admin
+  month: String!                      # Se usa para los filtros del admin
+  year: String @default(value: " ")   # Se usa para los filtros del admin
+}
+
+
+
+type Pages @model @auth(rules: [{ allow: public }]) {
+  id: ID!
+  name: String!
+  url: String!
+  ico: String!
+  type: PageType @default(value: "none")
+  PageUsers: [Users] @manyToMany(relationName: "PageUsers")
+}
+
+type Companies @model @auth(rules: [{ allow: public }]) {
+  id: ID!
+  name: String!
+  type: CompanyType @default(value: "none")
+  Users: [Users] @hasMany
+  Posts: [Posts] @hasMany
+}
+
+type Posts @model @searchable @auth(rules: [{ allow: public }]) {
+  id: ID! @index(name: "searchByDiaMesAno", sortKeyFields: ["day", "month", "year"])
+  name: String!
+  publishingDate: String
+  createdAt: AWSDateTime  #habilitado para ordenamiento
+  content: String!
+  type: PostType @default(value: "none") 
+  state: PostState @default(value: "pending")
+  day: String!                        # Se usa para los filtros del admin
+  month: String!                      # Se usa para los filtros del admin
+  year: String @default(value: " ")   # Se usa para los filtros del admin
+  hour: String @default(value: " ")   # Se usa para los filtros del admin
+  Company: Companies @belongsTo
+  User: Users @belongsTo
+  PostAssets: [Assets] @manyToMany(relationName: "PostAssets")
+  PostLocation: [Locations] @manyToMany(relationName: "PostLocation")
+}
+
+
+type Assets @model @auth(rules: [{ allow: public }]) {
+  id: ID!
+  name: String!
+  file: S3Object
+  PostAssets: [Posts] @manyToMany(relationName: "PostAssets")
+}
+
+type Locations @model @auth(rules: [{ allow: public }]) {
+  id: ID!
+  name: String!
+  Geo: Geo
+  type: String!
+  PostLocation: [Posts] @manyToMany(relationName: "PostLocation")
+}
+
+type Geo {
+  lat: String
+  long: String
+  height: String
+}
+
+type S3Object {
+  bucket: String!
+  region: String!
+  key: String!
+}
+
+enum PostState {
+  pending
+  published
+  deleted
+  review
+}
+
+enum PostType {
+  jobs
+  news
+  advertisements
+  schedules
+  projects
+  none
+}
+
+enum CompanyType {
+  admin
+  enterprise
+  gov
+  none
+}
+
+
+enum PageType {
+  none
+  reports
+  admin
+}

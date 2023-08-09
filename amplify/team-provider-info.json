@@ -1,0 +1,49 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-holabackend-dev-225935-authRole",
+      "UnauthRoleArn": "arn:aws:iam::734538576188:role/amplify-holabackend-dev-225935-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::734538576188:role/amplify-holabackend-dev-225935-authRole",
+      "Region": "us-east-2",
+      "DeploymentBucketName": "amplify-holabackend-dev-225935-deployment",
+      "UnauthRoleName": "amplify-holabackend-dev-225935-unauthRole",
+      "StackName": "amplify-holabackend-dev-225935",
+      "StackId": "arn:aws:cloudformation:us-east-2:734538576188:stack/amplify-holabackend-dev-225935/4f9e2dc0-1c72-11ee-b0d0-06265f1183a3",
+      "AmplifyAppId": "d2pn12ald99zlf",
+      "AuthTriggerTemplateURL": "https://s3.amazonaws.com/amplify-holabackend-dev-225935-deployment/amplify-cfn-templates/auth/auth-trigger-cloudformation-template.json"
+    },
+    "categories": {
+      "api": {
+        "holabackend": {},
+        "AdminQueries": {}
+      },
+      "auth": {
+        "holauth": {},
+        "userPoolGroups": {}
+      },
+      "function": {
+        "holauthPostConfirmation": {
+          "GROUP": "users",
+          "deploymentBucketName": "amplify-holabackend-dev-225935-deployment",
+          "s3Key": "amplify-builds/holauthPostConfirmation-6e2b6a57703435474b43-build.zip"
+        },
+        "AdminQueries00f70391": {
+          "deploymentBucketName": "amplify-holabackend-dev-225935-deployment",
+          "s3Key": "amplify-builds/AdminQueries00f70391-474f517775527a355853-build.zip"
+        },
+        "holauthPostAuthentication": {
+          "deploymentBucketName": "amplify-holabackend-dev-225935-deployment",
+          "s3Key": "amplify-builds/holauthPostAuthentication-6c6d6e7366636a6c5046-build.zip"
+        },
+        "holauthPreSignup": {
+          "deploymentBucketName": "amplify-holabackend-dev-225935-deployment",
+          "s3Key": "amplify-builds/holauthPreSignup-426f4b78533950734868-build.zip"
+        },
+        "holabackendholalibLayer": {
+          "deploymentBucketName": "amplify-holabackend-dev-225935-deployment",
+          "s3Key": "amplify-builds/holabackendholalibLayer-LambdaLayerVersion94fe4ebf-build.zip"
+        }
+      }
+    }
+  }
+}
