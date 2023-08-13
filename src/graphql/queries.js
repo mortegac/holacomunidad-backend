@@ -30,104 +30,6 @@ export const searchResumeDashboards = /* GraphQL */ `
         year
         createdAt
         updatedAt
-        _version
-        _deleted
-        _lastChangedAt
-        __typename
-      }
-      nextToken
-      total
-      aggregateItems {
-        name
-        result {
-          ... on SearchableAggregateScalarResult {
-            value
-          }
-          ... on SearchableAggregateBucketResult {
-            buckets {
-              key
-              doc_count
-              __typename
-            }
-          }
-        }
-        __typename
-      }
-      __typename
-    }
-  }
-`;
-export const searchPosts = /* GraphQL */ `
-  query SearchPosts(
-    $filter: SearchablePostsFilterInput
-    $sort: [SearchablePostsSortInput]
-    $limit: Int
-    $nextToken: String
-    $from: Int
-    $aggregates: [SearchablePostsAggregationInput]
-  ) {
-    searchPosts(
-      filter: $filter
-      sort: $sort
-      limit: $limit
-      nextToken: $nextToken
-      from: $from
-      aggregates: $aggregates
-    ) {
-      items {
-        id
-        name
-        publishingDate
-        createdAt
-        content
-        type
-        state
-        day
-        month
-        year
-        hour
-        Company {
-          id
-          name
-          type
-          createdAt
-          updatedAt
-          _version
-          _deleted
-          _lastChangedAt
-          __typename
-        }
-        User {
-          idUser
-          name
-          validated
-          hasAdminAccess
-          perfil
-          id
-          createdAt
-          updatedAt
-          _version
-          _deleted
-          _lastChangedAt
-          companiesUsersId
-          __typename
-        }
-        PostAssets {
-          nextToken
-          startedAt
-          __typename
-        }
-        PostLocation {
-          nextToken
-          startedAt
-          __typename
-        }
-        updatedAt
-        _version
-        _deleted
-        _lastChangedAt
-        usersPostsId
-        companiesPostsId
         __typename
       }
       nextToken
@@ -172,19 +74,14 @@ export const getUsers = /* GraphQL */ `
         type
         Users {
           nextToken
-          startedAt
           __typename
         }
         Posts {
           nextToken
-          startedAt
           __typename
         }
         createdAt
         updatedAt
-        _version
-        _deleted
-        _lastChangedAt
         __typename
       }
       PageUsers {
@@ -194,13 +91,9 @@ export const getUsers = /* GraphQL */ `
           pagesId
           createdAt
           updatedAt
-          _version
-          _deleted
-          _lastChangedAt
           __typename
         }
         nextToken
-        startedAt
         __typename
       }
       Posts {
@@ -217,23 +110,16 @@ export const getUsers = /* GraphQL */ `
           year
           hour
           updatedAt
-          _version
-          _deleted
-          _lastChangedAt
           usersPostsId
           companiesPostsId
           __typename
         }
         nextToken
-        startedAt
         __typename
       }
       id
       createdAt
       updatedAt
-      _version
-      _deleted
-      _lastChangedAt
       companiesUsersId
       __typename
     }
@@ -264,93 +150,23 @@ export const listUsers = /* GraphQL */ `
           type
           createdAt
           updatedAt
-          _version
-          _deleted
-          _lastChangedAt
           __typename
         }
         PageUsers {
           nextToken
-          startedAt
           __typename
         }
         Posts {
           nextToken
-          startedAt
           __typename
         }
         id
         createdAt
         updatedAt
-        _version
-        _deleted
-        _lastChangedAt
         companiesUsersId
         __typename
       }
       nextToken
-      startedAt
-      __typename
-    }
-  }
-`;
-export const syncUsers = /* GraphQL */ `
-  query SyncUsers(
-    $filter: ModelUsersFilterInput
-    $limit: Int
-    $nextToken: String
-    $lastSync: AWSTimestamp
-  ) {
-    syncUsers(
-      filter: $filter
-      limit: $limit
-      nextToken: $nextToken
-      lastSync: $lastSync
-    ) {
-      items {
-        idUser
-        name
-        validated
-        hasAdminAccess
-        perfil
-        Geo {
-          lat
-          long
-          height
-          __typename
-        }
-        Company {
-          id
-          name
-          type
-          createdAt
-          updatedAt
-          _version
-          _deleted
-          _lastChangedAt
-          __typename
-        }
-        PageUsers {
-          nextToken
-          startedAt
-          __typename
-        }
-        Posts {
-          nextToken
-          startedAt
-          __typename
-        }
-        id
-        createdAt
-        updatedAt
-        _version
-        _deleted
-        _lastChangedAt
-        companiesUsersId
-        __typename
-      }
-      nextToken
-      startedAt
       __typename
     }
   }
@@ -368,9 +184,6 @@ export const getUserAccess = /* GraphQL */ `
       hour
       createdAt
       updatedAt
-      _version
-      _deleted
-      _lastChangedAt
       __typename
     }
   }
@@ -393,48 +206,9 @@ export const listUserAccesses = /* GraphQL */ `
         hour
         createdAt
         updatedAt
-        _version
-        _deleted
-        _lastChangedAt
         __typename
       }
       nextToken
-      startedAt
-      __typename
-    }
-  }
-`;
-export const syncUserAccesses = /* GraphQL */ `
-  query SyncUserAccesses(
-    $filter: ModelUserAccessFilterInput
-    $limit: Int
-    $nextToken: String
-    $lastSync: AWSTimestamp
-  ) {
-    syncUserAccesses(
-      filter: $filter
-      limit: $limit
-      nextToken: $nextToken
-      lastSync: $lastSync
-    ) {
-      items {
-        id
-        idUser
-        module
-        date
-        day
-        month
-        year
-        hour
-        createdAt
-        updatedAt
-        _version
-        _deleted
-        _lastChangedAt
-        __typename
-      }
-      nextToken
-      startedAt
       __typename
     }
   }
@@ -453,9 +227,6 @@ export const getResumeDashboard = /* GraphQL */ `
       year
       createdAt
       updatedAt
-      _version
-      _deleted
-      _lastChangedAt
       __typename
     }
   }
@@ -483,49 +254,9 @@ export const listResumeDashboards = /* GraphQL */ `
         year
         createdAt
         updatedAt
-        _version
-        _deleted
-        _lastChangedAt
         __typename
       }
       nextToken
-      startedAt
-      __typename
-    }
-  }
-`;
-export const syncResumeDashboards = /* GraphQL */ `
-  query SyncResumeDashboards(
-    $filter: ModelResumeDashboardFilterInput
-    $limit: Int
-    $nextToken: String
-    $lastSync: AWSTimestamp
-  ) {
-    syncResumeDashboards(
-      filter: $filter
-      limit: $limit
-      nextToken: $nextToken
-      lastSync: $lastSync
-    ) {
-      items {
-        id
-        name
-        type
-        count
-        isAll
-        idLocation
-        day
-        month
-        year
-        createdAt
-        updatedAt
-        _version
-        _deleted
-        _lastChangedAt
-        __typename
-      }
-      nextToken
-      startedAt
       __typename
     }
   }
@@ -545,20 +276,13 @@ export const getPages = /* GraphQL */ `
           pagesId
           createdAt
           updatedAt
-          _version
-          _deleted
-          _lastChangedAt
           __typename
         }
         nextToken
-        startedAt
         __typename
       }
       createdAt
       updatedAt
-      _version
-      _deleted
-      _lastChangedAt
       __typename
     }
   }
@@ -578,55 +302,13 @@ export const listPages = /* GraphQL */ `
         type
         PageUsers {
           nextToken
-          startedAt
           __typename
         }
         createdAt
         updatedAt
-        _version
-        _deleted
-        _lastChangedAt
         __typename
       }
       nextToken
-      startedAt
-      __typename
-    }
-  }
-`;
-export const syncPages = /* GraphQL */ `
-  query SyncPages(
-    $filter: ModelPagesFilterInput
-    $limit: Int
-    $nextToken: String
-    $lastSync: AWSTimestamp
-  ) {
-    syncPages(
-      filter: $filter
-      limit: $limit
-      nextToken: $nextToken
-      lastSync: $lastSync
-    ) {
-      items {
-        id
-        name
-        url
-        ico
-        type
-        PageUsers {
-          nextToken
-          startedAt
-          __typename
-        }
-        createdAt
-        updatedAt
-        _version
-        _deleted
-        _lastChangedAt
-        __typename
-      }
-      nextToken
-      startedAt
       __typename
     }
   }
@@ -647,14 +329,10 @@ export const getCompanies = /* GraphQL */ `
           id
           createdAt
           updatedAt
-          _version
-          _deleted
-          _lastChangedAt
           companiesUsersId
           __typename
         }
         nextToken
-        startedAt
         __typename
       }
       Posts {
@@ -671,22 +349,15 @@ export const getCompanies = /* GraphQL */ `
           year
           hour
           updatedAt
-          _version
-          _deleted
-          _lastChangedAt
           usersPostsId
           companiesPostsId
           __typename
         }
         nextToken
-        startedAt
         __typename
       }
       createdAt
       updatedAt
-      _version
-      _deleted
-      _lastChangedAt
       __typename
     }
   }
@@ -704,63 +375,17 @@ export const listCompanies = /* GraphQL */ `
         type
         Users {
           nextToken
-          startedAt
           __typename
         }
         Posts {
           nextToken
-          startedAt
           __typename
         }
         createdAt
         updatedAt
-        _version
-        _deleted
-        _lastChangedAt
         __typename
       }
       nextToken
-      startedAt
-      __typename
-    }
-  }
-`;
-export const syncCompanies = /* GraphQL */ `
-  query SyncCompanies(
-    $filter: ModelCompaniesFilterInput
-    $limit: Int
-    $nextToken: String
-    $lastSync: AWSTimestamp
-  ) {
-    syncCompanies(
-      filter: $filter
-      limit: $limit
-      nextToken: $nextToken
-      lastSync: $lastSync
-    ) {
-      items {
-        id
-        name
-        type
-        Users {
-          nextToken
-          startedAt
-          __typename
-        }
-        Posts {
-          nextToken
-          startedAt
-          __typename
-        }
-        createdAt
-        updatedAt
-        _version
-        _deleted
-        _lastChangedAt
-        __typename
-      }
-      nextToken
-      startedAt
       __typename
     }
   }
@@ -785,19 +410,14 @@ export const getPosts = /* GraphQL */ `
         type
         Users {
           nextToken
-          startedAt
           __typename
         }
         Posts {
           nextToken
-          startedAt
           __typename
         }
         createdAt
         updatedAt
-        _version
-        _deleted
-        _lastChangedAt
         __typename
       }
       User {
@@ -818,27 +438,19 @@ export const getPosts = /* GraphQL */ `
           type
           createdAt
           updatedAt
-          _version
-          _deleted
-          _lastChangedAt
           __typename
         }
         PageUsers {
           nextToken
-          startedAt
           __typename
         }
         Posts {
           nextToken
-          startedAt
           __typename
         }
         id
         createdAt
         updatedAt
-        _version
-        _deleted
-        _lastChangedAt
         companiesUsersId
         __typename
       }
@@ -849,13 +461,9 @@ export const getPosts = /* GraphQL */ `
           assetsId
           createdAt
           updatedAt
-          _version
-          _deleted
-          _lastChangedAt
           __typename
         }
         nextToken
-        startedAt
         __typename
       }
       PostLocation {
@@ -865,19 +473,12 @@ export const getPosts = /* GraphQL */ `
           locationsId
           createdAt
           updatedAt
-          _version
-          _deleted
-          _lastChangedAt
           __typename
         }
         nextToken
-        startedAt
         __typename
       }
       updatedAt
-      _version
-      _deleted
-      _lastChangedAt
       usersPostsId
       companiesPostsId
       __typename
@@ -909,9 +510,6 @@ export const listPosts = /* GraphQL */ `
           type
           createdAt
           updatedAt
-          _version
-          _deleted
-          _lastChangedAt
           __typename
         }
         User {
@@ -923,107 +521,23 @@ export const listPosts = /* GraphQL */ `
           id
           createdAt
           updatedAt
-          _version
-          _deleted
-          _lastChangedAt
           companiesUsersId
           __typename
         }
         PostAssets {
           nextToken
-          startedAt
           __typename
         }
         PostLocation {
           nextToken
-          startedAt
           __typename
         }
         updatedAt
-        _version
-        _deleted
-        _lastChangedAt
         usersPostsId
         companiesPostsId
         __typename
       }
       nextToken
-      startedAt
-      __typename
-    }
-  }
-`;
-export const syncPosts = /* GraphQL */ `
-  query SyncPosts(
-    $filter: ModelPostsFilterInput
-    $limit: Int
-    $nextToken: String
-    $lastSync: AWSTimestamp
-  ) {
-    syncPosts(
-      filter: $filter
-      limit: $limit
-      nextToken: $nextToken
-      lastSync: $lastSync
-    ) {
-      items {
-        id
-        name
-        publishingDate
-        createdAt
-        content
-        type
-        state
-        day
-        month
-        year
-        hour
-        Company {
-          id
-          name
-          type
-          createdAt
-          updatedAt
-          _version
-          _deleted
-          _lastChangedAt
-          __typename
-        }
-        User {
-          idUser
-          name
-          validated
-          hasAdminAccess
-          perfil
-          id
-          createdAt
-          updatedAt
-          _version
-          _deleted
-          _lastChangedAt
-          companiesUsersId
-          __typename
-        }
-        PostAssets {
-          nextToken
-          startedAt
-          __typename
-        }
-        PostLocation {
-          nextToken
-          startedAt
-          __typename
-        }
-        updatedAt
-        _version
-        _deleted
-        _lastChangedAt
-        usersPostsId
-        companiesPostsId
-        __typename
-      }
-      nextToken
-      startedAt
       __typename
     }
   }
@@ -1046,20 +560,13 @@ export const getAssets = /* GraphQL */ `
           assetsId
           createdAt
           updatedAt
-          _version
-          _deleted
-          _lastChangedAt
           __typename
         }
         nextToken
-        startedAt
         __typename
       }
       createdAt
       updatedAt
-      _version
-      _deleted
-      _lastChangedAt
       __typename
     }
   }
@@ -1082,58 +589,13 @@ export const listAssets = /* GraphQL */ `
         }
         PostAssets {
           nextToken
-          startedAt
           __typename
         }
         createdAt
         updatedAt
-        _version
-        _deleted
-        _lastChangedAt
         __typename
       }
       nextToken
-      startedAt
-      __typename
-    }
-  }
-`;
-export const syncAssets = /* GraphQL */ `
-  query SyncAssets(
-    $filter: ModelAssetsFilterInput
-    $limit: Int
-    $nextToken: String
-    $lastSync: AWSTimestamp
-  ) {
-    syncAssets(
-      filter: $filter
-      limit: $limit
-      nextToken: $nextToken
-      lastSync: $lastSync
-    ) {
-      items {
-        id
-        name
-        file {
-          bucket
-          region
-          key
-          __typename
-        }
-        PostAssets {
-          nextToken
-          startedAt
-          __typename
-        }
-        createdAt
-        updatedAt
-        _version
-        _deleted
-        _lastChangedAt
-        __typename
-      }
-      nextToken
-      startedAt
       __typename
     }
   }
@@ -1157,20 +619,13 @@ export const getLocations = /* GraphQL */ `
           locationsId
           createdAt
           updatedAt
-          _version
-          _deleted
-          _lastChangedAt
           __typename
         }
         nextToken
-        startedAt
         __typename
       }
       createdAt
       updatedAt
-      _version
-      _deleted
-      _lastChangedAt
       __typename
     }
   }
@@ -1194,59 +649,13 @@ export const listLocations = /* GraphQL */ `
         type
         PostLocation {
           nextToken
-          startedAt
           __typename
         }
         createdAt
         updatedAt
-        _version
-        _deleted
-        _lastChangedAt
         __typename
       }
       nextToken
-      startedAt
-      __typename
-    }
-  }
-`;
-export const syncLocations = /* GraphQL */ `
-  query SyncLocations(
-    $filter: ModelLocationsFilterInput
-    $limit: Int
-    $nextToken: String
-    $lastSync: AWSTimestamp
-  ) {
-    syncLocations(
-      filter: $filter
-      limit: $limit
-      nextToken: $nextToken
-      lastSync: $lastSync
-    ) {
-      items {
-        id
-        name
-        Geo {
-          lat
-          long
-          height
-          __typename
-        }
-        type
-        PostLocation {
-          nextToken
-          startedAt
-          __typename
-        }
-        createdAt
-        updatedAt
-        _version
-        _deleted
-        _lastChangedAt
-        __typename
-      }
-      nextToken
-      startedAt
       __typename
     }
   }
@@ -1275,27 +684,19 @@ export const getPageUsers = /* GraphQL */ `
           type
           createdAt
           updatedAt
-          _version
-          _deleted
-          _lastChangedAt
           __typename
         }
         PageUsers {
           nextToken
-          startedAt
           __typename
         }
         Posts {
           nextToken
-          startedAt
           __typename
         }
         id
         createdAt
         updatedAt
-        _version
-        _deleted
-        _lastChangedAt
         companiesUsersId
         __typename
       }
@@ -1307,21 +708,14 @@ export const getPageUsers = /* GraphQL */ `
         type
         PageUsers {
           nextToken
-          startedAt
           __typename
         }
         createdAt
         updatedAt
-        _version
-        _deleted
-        _lastChangedAt
         __typename
       }
       createdAt
       updatedAt
-      _version
-      _deleted
-      _lastChangedAt
       __typename
     }
   }
@@ -1346,9 +740,6 @@ export const listPageUsers = /* GraphQL */ `
           id
           createdAt
           updatedAt
-          _version
-          _deleted
-          _lastChangedAt
           companiesUsersId
           __typename
         }
@@ -1360,78 +751,13 @@ export const listPageUsers = /* GraphQL */ `
           type
           createdAt
           updatedAt
-          _version
-          _deleted
-          _lastChangedAt
           __typename
         }
         createdAt
         updatedAt
-        _version
-        _deleted
-        _lastChangedAt
         __typename
       }
       nextToken
-      startedAt
-      __typename
-    }
-  }
-`;
-export const syncPageUsers = /* GraphQL */ `
-  query SyncPageUsers(
-    $filter: ModelPageUsersFilterInput
-    $limit: Int
-    $nextToken: String
-    $lastSync: AWSTimestamp
-  ) {
-    syncPageUsers(
-      filter: $filter
-      limit: $limit
-      nextToken: $nextToken
-      lastSync: $lastSync
-    ) {
-      items {
-        id
-        usersId
-        pagesId
-        users {
-          idUser
-          name
-          validated
-          hasAdminAccess
-          perfil
-          id
-          createdAt
-          updatedAt
-          _version
-          _deleted
-          _lastChangedAt
-          companiesUsersId
-          __typename
-        }
-        pages {
-          id
-          name
-          url
-          ico
-          type
-          createdAt
-          updatedAt
-          _version
-          _deleted
-          _lastChangedAt
-          __typename
-        }
-        createdAt
-        updatedAt
-        _version
-        _deleted
-        _lastChangedAt
-        __typename
-      }
-      nextToken
-      startedAt
       __typename
     }
   }
@@ -1460,9 +786,6 @@ export const getPostAssets = /* GraphQL */ `
           type
           createdAt
           updatedAt
-          _version
-          _deleted
-          _lastChangedAt
           __typename
         }
         User {
@@ -1474,26 +797,18 @@ export const getPostAssets = /* GraphQL */ `
           id
           createdAt
           updatedAt
-          _version
-          _deleted
-          _lastChangedAt
           companiesUsersId
           __typename
         }
         PostAssets {
           nextToken
-          startedAt
           __typename
         }
         PostLocation {
           nextToken
-          startedAt
           __typename
         }
         updatedAt
-        _version
-        _deleted
-        _lastChangedAt
         usersPostsId
         companiesPostsId
         __typename
@@ -1509,21 +824,14 @@ export const getPostAssets = /* GraphQL */ `
         }
         PostAssets {
           nextToken
-          startedAt
           __typename
         }
         createdAt
         updatedAt
-        _version
-        _deleted
-        _lastChangedAt
         __typename
       }
       createdAt
       updatedAt
-      _version
-      _deleted
-      _lastChangedAt
       __typename
     }
   }
@@ -1552,9 +860,6 @@ export const listPostAssets = /* GraphQL */ `
           year
           hour
           updatedAt
-          _version
-          _deleted
-          _lastChangedAt
           usersPostsId
           companiesPostsId
           __typename
@@ -1564,80 +869,13 @@ export const listPostAssets = /* GraphQL */ `
           name
           createdAt
           updatedAt
-          _version
-          _deleted
-          _lastChangedAt
           __typename
         }
         createdAt
         updatedAt
-        _version
-        _deleted
-        _lastChangedAt
         __typename
       }
       nextToken
-      startedAt
-      __typename
-    }
-  }
-`;
-export const syncPostAssets = /* GraphQL */ `
-  query SyncPostAssets(
-    $filter: ModelPostAssetsFilterInput
-    $limit: Int
-    $nextToken: String
-    $lastSync: AWSTimestamp
-  ) {
-    syncPostAssets(
-      filter: $filter
-      limit: $limit
-      nextToken: $nextToken
-      lastSync: $lastSync
-    ) {
-      items {
-        id
-        postsId
-        assetsId
-        posts {
-          id
-          name
-          publishingDate
-          createdAt
-          content
-          type
-          state
-          day
-          month
-          year
-          hour
-          updatedAt
-          _version
-          _deleted
-          _lastChangedAt
-          usersPostsId
-          companiesPostsId
-          __typename
-        }
-        assets {
-          id
-          name
-          createdAt
-          updatedAt
-          _version
-          _deleted
-          _lastChangedAt
-          __typename
-        }
-        createdAt
-        updatedAt
-        _version
-        _deleted
-        _lastChangedAt
-        __typename
-      }
-      nextToken
-      startedAt
       __typename
     }
   }
@@ -1666,9 +904,6 @@ export const getPostLocation = /* GraphQL */ `
           type
           createdAt
           updatedAt
-          _version
-          _deleted
-          _lastChangedAt
           __typename
         }
         User {
@@ -1680,26 +915,18 @@ export const getPostLocation = /* GraphQL */ `
           id
           createdAt
           updatedAt
-          _version
-          _deleted
-          _lastChangedAt
           companiesUsersId
           __typename
         }
         PostAssets {
           nextToken
-          startedAt
           __typename
         }
         PostLocation {
           nextToken
-          startedAt
           __typename
         }
         updatedAt
-        _version
-        _deleted
-        _lastChangedAt
         usersPostsId
         companiesPostsId
         __typename
@@ -1716,21 +943,14 @@ export const getPostLocation = /* GraphQL */ `
         type
         PostLocation {
           nextToken
-          startedAt
           __typename
         }
         createdAt
         updatedAt
-        _version
-        _deleted
-        _lastChangedAt
         __typename
       }
       createdAt
       updatedAt
-      _version
-      _deleted
-      _lastChangedAt
       __typename
     }
   }
@@ -1759,9 +979,6 @@ export const listPostLocations = /* GraphQL */ `
           year
           hour
           updatedAt
-          _version
-          _deleted
-          _lastChangedAt
           usersPostsId
           companiesPostsId
           __typename
@@ -1772,81 +989,13 @@ export const listPostLocations = /* GraphQL */ `
           type
           createdAt
           updatedAt
-          _version
-          _deleted
-          _lastChangedAt
           __typename
         }
         createdAt
         updatedAt
-        _version
-        _deleted
-        _lastChangedAt
         __typename
       }
       nextToken
-      startedAt
-      __typename
-    }
-  }
-`;
-export const syncPostLocations = /* GraphQL */ `
-  query SyncPostLocations(
-    $filter: ModelPostLocationFilterInput
-    $limit: Int
-    $nextToken: String
-    $lastSync: AWSTimestamp
-  ) {
-    syncPostLocations(
-      filter: $filter
-      limit: $limit
-      nextToken: $nextToken
-      lastSync: $lastSync
-    ) {
-      items {
-        id
-        postsId
-        locationsId
-        posts {
-          id
-          name
-          publishingDate
-          createdAt
-          content
-          type
-          state
-          day
-          month
-          year
-          hour
-          updatedAt
-          _version
-          _deleted
-          _lastChangedAt
-          usersPostsId
-          companiesPostsId
-          __typename
-        }
-        locations {
-          id
-          name
-          type
-          createdAt
-          updatedAt
-          _version
-          _deleted
-          _lastChangedAt
-          __typename
-        }
-        createdAt
-        updatedAt
-        _version
-        _deleted
-        _lastChangedAt
-        __typename
-      }
-      nextToken
-      startedAt
       __typename
     }
   }
@@ -1886,9 +1035,6 @@ export const postsByIdAndDayAndMonthAndYear = /* GraphQL */ `
           type
           createdAt
           updatedAt
-          _version
-          _deleted
-          _lastChangedAt
           __typename
         }
         User {
@@ -1900,32 +1046,23 @@ export const postsByIdAndDayAndMonthAndYear = /* GraphQL */ `
           id
           createdAt
           updatedAt
-          _version
-          _deleted
-          _lastChangedAt
           companiesUsersId
           __typename
         }
         PostAssets {
           nextToken
-          startedAt
           __typename
         }
         PostLocation {
           nextToken
-          startedAt
           __typename
         }
         updatedAt
-        _version
-        _deleted
-        _lastChangedAt
         usersPostsId
         companiesPostsId
         __typename
       }
       nextToken
-      startedAt
       __typename
     }
   }
@@ -1958,9 +1095,6 @@ export const pageUsersByUsersId = /* GraphQL */ `
           id
           createdAt
           updatedAt
-          _version
-          _deleted
-          _lastChangedAt
           companiesUsersId
           __typename
         }
@@ -1972,20 +1106,13 @@ export const pageUsersByUsersId = /* GraphQL */ `
           type
           createdAt
           updatedAt
-          _version
-          _deleted
-          _lastChangedAt
           __typename
         }
         createdAt
         updatedAt
-        _version
-        _deleted
-        _lastChangedAt
         __typename
       }
       nextToken
-      startedAt
       __typename
     }
   }
@@ -2018,9 +1145,6 @@ export const pageUsersByPagesId = /* GraphQL */ `
           id
           createdAt
           updatedAt
-          _version
-          _deleted
-          _lastChangedAt
           companiesUsersId
           __typename
         }
@@ -2032,20 +1156,13 @@ export const pageUsersByPagesId = /* GraphQL */ `
           type
           createdAt
           updatedAt
-          _version
-          _deleted
-          _lastChangedAt
           __typename
         }
         createdAt
         updatedAt
-        _version
-        _deleted
-        _lastChangedAt
         __typename
       }
       nextToken
-      startedAt
       __typename
     }
   }
@@ -2082,9 +1199,6 @@ export const postAssetsByPostsId = /* GraphQL */ `
           year
           hour
           updatedAt
-          _version
-          _deleted
-          _lastChangedAt
           usersPostsId
           companiesPostsId
           __typename
@@ -2094,20 +1208,13 @@ export const postAssetsByPostsId = /* GraphQL */ `
           name
           createdAt
           updatedAt
-          _version
-          _deleted
-          _lastChangedAt
           __typename
         }
         createdAt
         updatedAt
-        _version
-        _deleted
-        _lastChangedAt
         __typename
       }
       nextToken
-      startedAt
       __typename
     }
   }
@@ -2144,9 +1251,6 @@ export const postAssetsByAssetsId = /* GraphQL */ `
           year
           hour
           updatedAt
-          _version
-          _deleted
-          _lastChangedAt
           usersPostsId
           companiesPostsId
           __typename
@@ -2156,20 +1260,13 @@ export const postAssetsByAssetsId = /* GraphQL */ `
           name
           createdAt
           updatedAt
-          _version
-          _deleted
-          _lastChangedAt
           __typename
         }
         createdAt
         updatedAt
-        _version
-        _deleted
-        _lastChangedAt
         __typename
       }
       nextToken
-      startedAt
       __typename
     }
   }
@@ -2206,9 +1303,6 @@ export const postLocationsByPostsId = /* GraphQL */ `
           year
           hour
           updatedAt
-          _version
-          _deleted
-          _lastChangedAt
           usersPostsId
           companiesPostsId
           __typename
@@ -2219,20 +1313,13 @@ export const postLocationsByPostsId = /* GraphQL */ `
           type
           createdAt
           updatedAt
-          _version
-          _deleted
-          _lastChangedAt
           __typename
         }
         createdAt
         updatedAt
-        _version
-        _deleted
-        _lastChangedAt
         __typename
       }
       nextToken
-      startedAt
       __typename
     }
   }
@@ -2269,9 +1356,6 @@ export const postLocationsByLocationsId = /* GraphQL */ `
           year
           hour
           updatedAt
-          _version
-          _deleted
-          _lastChangedAt
           usersPostsId
           companiesPostsId
           __typename
@@ -2282,20 +1366,13 @@ export const postLocationsByLocationsId = /* GraphQL */ `
           type
           createdAt
           updatedAt
-          _version
-          _deleted
-          _lastChangedAt
           __typename
         }
         createdAt
         updatedAt
-        _version
-        _deleted
-        _lastChangedAt
         __typename
       }
       nextToken
-      startedAt
       __typename
     }
   }

@@ -9,10 +9,6 @@
       "apiKeyExpirationDate": "2024-07-06T03:03:46.893Z",
       "keyDescription": "365"
     },
-    "conflictResolution": {
-      "defaultResolutionStrategy": {
-        "type": "AUTOMERGE"
-      }
-    }
+    "conflictResolution": {}
   }
 }

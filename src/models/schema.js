@@ -594,7 +594,7 @@ export const schema = {
                 "createdAt": {
                     "name": "createdAt",
                     "isArray": false,
-                    "type": "AWSDateTime",
+                    "type": "String",
                     "isRequired": false,
                     "attributes": []
                 },
@@ -741,10 +741,6 @@ export const schema = {
             "attributes": [
                 {
                     "type": "model",
-                    "properties": {}
-                },
-                {
-                    "type": "searchable",
                     "properties": {}
                 },
                 {
@@ -1369,5 +1365,5 @@ export const schema = {
         }
     },
     "codegenVersion": "3.4.4",
-    "version": "febd4a21083b3046dba2f6158ce93cd7"
+    "version": "020820ce4a37c5b1f21a72e23334df97"
 };

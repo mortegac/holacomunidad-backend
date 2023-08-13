@@ -21,19 +21,14 @@ export const onCreateUsers = /* GraphQL */ `
         type
         Users {
           nextToken
-          startedAt
           __typename
         }
         Posts {
           nextToken
-          startedAt
           __typename
         }
         createdAt
         updatedAt
-        _version
-        _deleted
-        _lastChangedAt
         __typename
       }
       PageUsers {
@@ -43,13 +38,9 @@ export const onCreateUsers = /* GraphQL */ `
           pagesId
           createdAt
           updatedAt
-          _version
-          _deleted
-          _lastChangedAt
           __typename
         }
         nextToken
-        startedAt
         __typename
       }
       Posts {
@@ -66,23 +57,16 @@ export const onCreateUsers = /* GraphQL */ `
           year
           hour
           updatedAt
-          _version
-          _deleted
-          _lastChangedAt
           usersPostsId
           companiesPostsId
           __typename
         }
         nextToken
-        startedAt
         __typename
       }
       id
       createdAt
       updatedAt
-      _version
-      _deleted
-      _lastChangedAt
       companiesUsersId
       __typename
     }
@@ -108,19 +92,14 @@ export const onUpdateUsers = /* GraphQL */ `
         type
         Users {
           nextToken
-          startedAt
           __typename
         }
         Posts {
           nextToken
-          startedAt
           __typename
         }
         createdAt
         updatedAt
-        _version
-        _deleted
-        _lastChangedAt
         __typename
       }
       PageUsers {
@@ -130,13 +109,9 @@ export const onUpdateUsers = /* GraphQL */ `
           pagesId
           createdAt
           updatedAt
-          _version
-          _deleted
-          _lastChangedAt
           __typename
         }
         nextToken
-        startedAt
         __typename
       }
       Posts {
@@ -153,23 +128,16 @@ export const onUpdateUsers = /* GraphQL */ `
           year
           hour
           updatedAt
-          _version
-          _deleted
-          _lastChangedAt
           usersPostsId
           companiesPostsId
           __typename
         }
         nextToken
-        startedAt
         __typename
       }
       id
       createdAt
       updatedAt
-      _version
-      _deleted
-      _lastChangedAt
       companiesUsersId
       __typename
     }
@@ -195,19 +163,14 @@ export const onDeleteUsers = /* GraphQL */ `
         type
         Users {
           nextToken
-          startedAt
           __typename
         }
         Posts {
           nextToken
-          startedAt
           __typename
         }
         createdAt
         updatedAt
-        _version
-        _deleted
-        _lastChangedAt
         __typename
       }
       PageUsers {
@@ -217,13 +180,9 @@ export const onDeleteUsers = /* GraphQL */ `
           pagesId
           createdAt
           updatedAt
-          _version
-          _deleted
-          _lastChangedAt
           __typename
         }
         nextToken
-        startedAt
         __typename
       }
       Posts {
@@ -240,23 +199,16 @@ export const onDeleteUsers = /* GraphQL */ `
           year
           hour
           updatedAt
-          _version
-          _deleted
-          _lastChangedAt
           usersPostsId
           companiesPostsId
           __typename
         }
         nextToken
-        startedAt
         __typename
       }
       id
       createdAt
       updatedAt
-      _version
-      _deleted
-      _lastChangedAt
       companiesUsersId
       __typename
     }
@@ -277,9 +229,6 @@ export const onCreateUserAccess = /* GraphQL */ `
       hour
       createdAt
       updatedAt
-      _version
-      _deleted
-      _lastChangedAt
       __typename
     }
   }
@@ -299,9 +248,6 @@ export const onUpdateUserAccess = /* GraphQL */ `
       hour
       createdAt
       updatedAt
-      _version
-      _deleted
-      _lastChangedAt
       __typename
     }
   }
@@ -321,9 +267,6 @@ export const onDeleteUserAccess = /* GraphQL */ `
       hour
       createdAt
       updatedAt
-      _version
-      _deleted
-      _lastChangedAt
       __typename
     }
   }
@@ -344,9 +287,6 @@ export const onCreateResumeDashboard = /* GraphQL */ `
       year
       createdAt
       updatedAt
-      _version
-      _deleted
-      _lastChangedAt
       __typename
     }
   }
@@ -367,9 +307,6 @@ export const onUpdateResumeDashboard = /* GraphQL */ `
       year
       createdAt
       updatedAt
-      _version
-      _deleted
-      _lastChangedAt
       __typename
     }
   }
@@ -390,9 +327,6 @@ export const onDeleteResumeDashboard = /* GraphQL */ `
       year
       createdAt
       updatedAt
-      _version
-      _deleted
-      _lastChangedAt
       __typename
     }
   }
@@ -412,20 +346,13 @@ export const onCreatePages = /* GraphQL */ `
           pagesId
           createdAt
           updatedAt
-          _version
-          _deleted
-          _lastChangedAt
           __typename
         }
         nextToken
-        startedAt
         __typename
       }
       createdAt
       updatedAt
-      _version
-      _deleted
-      _lastChangedAt
       __typename
     }
   }
@@ -445,20 +372,13 @@ export const onUpdatePages = /* GraphQL */ `
           pagesId
           createdAt
           updatedAt
-          _version
-          _deleted
-          _lastChangedAt
           __typename
         }
         nextToken
-        startedAt
         __typename
       }
       createdAt
       updatedAt
-      _version
-      _deleted
-      _lastChangedAt
       __typename
     }
   }
@@ -478,20 +398,13 @@ export const onDeletePages = /* GraphQL */ `
           pagesId
           createdAt
           updatedAt
-          _version
-          _deleted
-          _lastChangedAt
           __typename
         }
         nextToken
-        startedAt
         __typename
       }
       createdAt
       updatedAt
-      _version
-      _deleted
-      _lastChangedAt
       __typename
     }
   }
@@ -514,14 +427,10 @@ export const onCreateCompanies = /* GraphQL */ `
           id
           createdAt
           updatedAt
-          _version
-          _deleted
-          _lastChangedAt
           companiesUsersId
           __typename
         }
         nextToken
-        startedAt
         __typename
       }
       Posts {
@@ -538,22 +447,15 @@ export const onCreateCompanies = /* GraphQL */ `
           year
           hour
           updatedAt
-          _version
-          _deleted
-          _lastChangedAt
           usersPostsId
           companiesPostsId
           __typename
         }
         nextToken
-        startedAt
         __typename
       }
       createdAt
       updatedAt
-      _version
-      _deleted
-      _lastChangedAt
       __typename
     }
   }
@@ -576,14 +478,10 @@ export const onUpdateCompanies = /* GraphQL */ `
           id
           createdAt
           updatedAt
-          _version
-          _deleted
-          _lastChangedAt
           companiesUsersId
           __typename
         }
         nextToken
-        startedAt
         __typename
       }
       Posts {
@@ -600,22 +498,15 @@ export const onUpdateCompanies = /* GraphQL */ `
           year
           hour
           updatedAt
-          _version
-          _deleted
-          _lastChangedAt
           usersPostsId
           companiesPostsId
           __typename
         }
         nextToken
-        startedAt
         __typename
       }
       createdAt
       updatedAt
-      _version
-      _deleted
-      _lastChangedAt
       __typename
     }
   }
@@ -638,14 +529,10 @@ export const onDeleteCompanies = /* GraphQL */ `
           id
           createdAt
           updatedAt
-          _version
-          _deleted
-          _lastChangedAt
           companiesUsersId
           __typename
         }
         nextToken
-        startedAt
         __typename
       }
       Posts {
@@ -662,22 +549,15 @@ export const onDeleteCompanies = /* GraphQL */ `
           year
           hour
           updatedAt
-          _version
-          _deleted
-          _lastChangedAt
           usersPostsId
           companiesPostsId
           __typename
         }
         nextToken
-        startedAt
         __typename
       }
       createdAt
       updatedAt
-      _version
-      _deleted
-      _lastChangedAt
       __typename
     }
   }
@@ -702,19 +582,14 @@ export const onCreatePosts = /* GraphQL */ `
         type
         Users {
           nextToken
-          startedAt
           __typename
         }
         Posts {
           nextToken
-          startedAt
           __typename
         }
         createdAt
         updatedAt
-        _version
-        _deleted
-        _lastChangedAt
         __typename
       }
       User {
@@ -735,27 +610,19 @@ export const onCreatePosts = /* GraphQL */ `
           type
           createdAt
           updatedAt
-          _version
-          _deleted
-          _lastChangedAt
           __typename
         }
         PageUsers {
           nextToken
-          startedAt
           __typename
         }
         Posts {
           nextToken
-          startedAt
           __typename
         }
         id
         createdAt
         updatedAt
-        _version
-        _deleted
-        _lastChangedAt
         companiesUsersId
         __typename
       }
@@ -766,13 +633,9 @@ export const onCreatePosts = /* GraphQL */ `
           assetsId
           createdAt
           updatedAt
-          _version
-          _deleted
-          _lastChangedAt
           __typename
         }
         nextToken
-        startedAt
         __typename
       }
       PostLocation {
@@ -782,19 +645,12 @@ export const onCreatePosts = /* GraphQL */ `
           locationsId
           createdAt
           updatedAt
-          _version
-          _deleted
-          _lastChangedAt
           __typename
         }
         nextToken
-        startedAt
         __typename
       }
       updatedAt
-      _version
-      _deleted
-      _lastChangedAt
       usersPostsId
       companiesPostsId
       __typename
@@ -821,19 +677,14 @@ export const onUpdatePosts = /* GraphQL */ `
         type
         Users {
           nextToken
-          startedAt
           __typename
         }
         Posts {
           nextToken
-          startedAt
           __typename
         }
         createdAt
         updatedAt
-        _version
-        _deleted
-        _lastChangedAt
         __typename
       }
       User {
@@ -854,27 +705,19 @@ export const onUpdatePosts = /* GraphQL */ `
           type
           createdAt
           updatedAt
-          _version
-          _deleted
-          _lastChangedAt
           __typename
         }
         PageUsers {
           nextToken
-          startedAt
           __typename
         }
         Posts {
           nextToken
-          startedAt
           __typename
         }
         id
         createdAt
         updatedAt
-        _version
-        _deleted
-        _lastChangedAt
         companiesUsersId
         __typename
       }
@@ -885,13 +728,9 @@ export const onUpdatePosts = /* GraphQL */ `
           assetsId
           createdAt
           updatedAt
-          _version
-          _deleted
-          _lastChangedAt
           __typename
         }
         nextToken
-        startedAt
         __typename
       }
       PostLocation {
@@ -901,19 +740,12 @@ export const onUpdatePosts = /* GraphQL */ `
           locationsId
           createdAt
           updatedAt
-          _version
-          _deleted
-          _lastChangedAt
           __typename
         }
         nextToken
-        startedAt
         __typename
       }
       updatedAt
-      _version
-      _deleted
-      _lastChangedAt
       usersPostsId
       companiesPostsId
       __typename
@@ -940,19 +772,14 @@ export const onDeletePosts = /* GraphQL */ `
         type
         Users {
           nextToken
-          startedAt
           __typename
         }
         Posts {
           nextToken
-          startedAt
           __typename
         }
         createdAt
         updatedAt
-        _version
-        _deleted
-        _lastChangedAt
         __typename
       }
       User {
@@ -973,27 +800,19 @@ export const onDeletePosts = /* GraphQL */ `
           type
           createdAt
           updatedAt
-          _version
-          _deleted
-          _lastChangedAt
           __typename
         }
         PageUsers {
           nextToken
-          startedAt
           __typename
         }
         Posts {
           nextToken
-          startedAt
           __typename
         }
         id
         createdAt
         updatedAt
-        _version
-        _deleted
-        _lastChangedAt
         companiesUsersId
         __typename
       }
@@ -1004,13 +823,9 @@ export const onDeletePosts = /* GraphQL */ `
           assetsId
           createdAt
           updatedAt
-          _version
-          _deleted
-          _lastChangedAt
           __typename
         }
         nextToken
-        startedAt
         __typename
       }
       PostLocation {
@@ -1020,19 +835,12 @@ export const onDeletePosts = /* GraphQL */ `
           locationsId
           createdAt
           updatedAt
-          _version
-          _deleted
-          _lastChangedAt
           __typename
         }
         nextToken
-        startedAt
         __typename
       }
       updatedAt
-      _version
-      _deleted
-      _lastChangedAt
       usersPostsId
       companiesPostsId
       __typename
@@ -1057,20 +865,13 @@ export const onCreateAssets = /* GraphQL */ `
           assetsId
           createdAt
           updatedAt
-          _version
-          _deleted
-          _lastChangedAt
           __typename
         }
         nextToken
-        startedAt
         __typename
       }
       createdAt
       updatedAt
-      _version
-      _deleted
-      _lastChangedAt
       __typename
     }
   }
@@ -1093,20 +894,13 @@ export const onUpdateAssets = /* GraphQL */ `
           assetsId
           createdAt
           updatedAt
-          _version
-          _deleted
-          _lastChangedAt
           __typename
         }
         nextToken
-        startedAt
         __typename
       }
       createdAt
       updatedAt
-      _version
-      _deleted
-      _lastChangedAt
       __typename
     }
   }
@@ -1129,20 +923,13 @@ export const onDeleteAssets = /* GraphQL */ `
           assetsId
           createdAt
           updatedAt
-          _version
-          _deleted
-          _lastChangedAt
           __typename
         }
         nextToken
-        startedAt
         __typename
       }
       createdAt
       updatedAt
-      _version
-      _deleted
-      _lastChangedAt
       __typename
     }
   }
@@ -1168,20 +955,13 @@ export const onCreateLocations = /* GraphQL */ `
           locationsId
           createdAt
           updatedAt
-          _version
-          _deleted
-          _lastChangedAt
           __typename
         }
         nextToken
-        startedAt
         __typename
       }
       createdAt
       updatedAt
-      _version
-      _deleted
-      _lastChangedAt
       __typename
     }
   }
@@ -1207,20 +987,13 @@ export const onUpdateLocations = /* GraphQL */ `
           locationsId
           createdAt
           updatedAt
-          _version
-          _deleted
-          _lastChangedAt
           __typename
         }
         nextToken
-        startedAt
         __typename
       }
       createdAt
       updatedAt
-      _version
-      _deleted
-      _lastChangedAt
       __typename
     }
   }
@@ -1246,20 +1019,13 @@ export const onDeleteLocations = /* GraphQL */ `
           locationsId
           createdAt
           updatedAt
-          _version
-          _deleted
-          _lastChangedAt
           __typename
         }
         nextToken
-        startedAt
         __typename
       }
       createdAt
       updatedAt
-      _version
-      _deleted
-      _lastChangedAt
       __typename
     }
   }
@@ -1290,27 +1056,19 @@ export const onCreatePageUsers = /* GraphQL */ `
           type
           createdAt
           updatedAt
-          _version
-          _deleted
-          _lastChangedAt
           __typename
         }
         PageUsers {
           nextToken
-          startedAt
           __typename
         }
         Posts {
           nextToken
-          startedAt
           __typename
         }
         id
         createdAt
         updatedAt
-        _version
-        _deleted
-        _lastChangedAt
         companiesUsersId
         __typename
       }
@@ -1322,21 +1080,14 @@ export const onCreatePageUsers = /* GraphQL */ `
         type
         PageUsers {
           nextToken
-          startedAt
           __typename
         }
         createdAt
         updatedAt
-        _version
-        _deleted
-        _lastChangedAt
         __typename
       }
       createdAt
       updatedAt
-      _version
-      _deleted
-      _lastChangedAt
       __typename
     }
   }
@@ -1367,27 +1118,19 @@ export const onUpdatePageUsers = /* GraphQL */ `
           type
           createdAt
           updatedAt
-          _version
-          _deleted
-          _lastChangedAt
           __typename
         }
         PageUsers {
           nextToken
-          startedAt
           __typename
         }
         Posts {
           nextToken
-          startedAt
           __typename
         }
         id
         createdAt
         updatedAt
-        _version
-        _deleted
-        _lastChangedAt
         companiesUsersId
         __typename
       }
@@ -1399,21 +1142,14 @@ export const onUpdatePageUsers = /* GraphQL */ `
         type
         PageUsers {
           nextToken
-          startedAt
           __typename
         }
         createdAt
         updatedAt
-        _version
-        _deleted
-        _lastChangedAt
         __typename
       }
       createdAt
       updatedAt
-      _version
-      _deleted
-      _lastChangedAt
       __typename
     }
   }
@@ -1444,27 +1180,19 @@ export const onDeletePageUsers = /* GraphQL */ `
           type
           createdAt
           updatedAt
-          _version
-          _deleted
-          _lastChangedAt
           __typename
         }
         PageUsers {
           nextToken
-          startedAt
           __typename
         }
         Posts {
           nextToken
-          startedAt
           __typename
         }
         id
         createdAt
         updatedAt
-        _version
-        _deleted
-        _lastChangedAt
         companiesUsersId
         __typename
       }
@@ -1476,21 +1204,14 @@ export const onDeletePageUsers = /* GraphQL */ `
         type
         PageUsers {
           nextToken
-          startedAt
           __typename
         }
         createdAt
         updatedAt
-        _version
-        _deleted
-        _lastChangedAt
         __typename
       }
       createdAt
       updatedAt
-      _version
-      _deleted
-      _lastChangedAt
       __typename
     }
   }
@@ -1521,9 +1242,6 @@ export const onCreatePostAssets = /* GraphQL */ `
           type
           createdAt
           updatedAt
-          _version
-          _deleted
-          _lastChangedAt
           __typename
         }
         User {
@@ -1535,26 +1253,18 @@ export const onCreatePostAssets = /* GraphQL */ `
           id
           createdAt
           updatedAt
-          _version
-          _deleted
-          _lastChangedAt
           companiesUsersId
           __typename
         }
         PostAssets {
           nextToken
-          startedAt
           __typename
         }
         PostLocation {
           nextToken
-          startedAt
           __typename
         }
         updatedAt
-        _version
-        _deleted
-        _lastChangedAt
         usersPostsId
         companiesPostsId
         __typename
@@ -1570,21 +1280,14 @@ export const onCreatePostAssets = /* GraphQL */ `
         }
         PostAssets {
           nextToken
-          startedAt
           __typename
         }
         createdAt
         updatedAt
-        _version
-        _deleted
-        _lastChangedAt
         __typename
       }
       createdAt
       updatedAt
-      _version
-      _deleted
-      _lastChangedAt
       __typename
     }
   }
@@ -1615,9 +1318,6 @@ export const onUpdatePostAssets = /* GraphQL */ `
           type
           createdAt
           updatedAt
-          _version
-          _deleted
-          _lastChangedAt
           __typename
         }
         User {
@@ -1629,26 +1329,18 @@ export const onUpdatePostAssets = /* GraphQL */ `
           id
           createdAt
           updatedAt
-          _version
-          _deleted
-          _lastChangedAt
           companiesUsersId
           __typename
         }
         PostAssets {
           nextToken
-          startedAt
           __typename
         }
         PostLocation {
           nextToken
-          startedAt
           __typename
         }
         updatedAt
-        _version
-        _deleted
-        _lastChangedAt
         usersPostsId
         companiesPostsId
         __typename
@@ -1664,21 +1356,14 @@ export const onUpdatePostAssets = /* GraphQL */ `
         }
         PostAssets {
           nextToken
-          startedAt
           __typename
         }
         createdAt
         updatedAt
-        _version
-        _deleted
-        _lastChangedAt
         __typename
       }
       createdAt
       updatedAt
-      _version
-      _deleted
-      _lastChangedAt
       __typename
     }
   }
@@ -1709,9 +1394,6 @@ export const onDeletePostAssets = /* GraphQL */ `
           type
           createdAt
           updatedAt
-          _version
-          _deleted
-          _lastChangedAt
           __typename
         }
         User {
@@ -1723,26 +1405,18 @@ export const onDeletePostAssets = /* GraphQL */ `
           id
           createdAt
           updatedAt
-          _version
-          _deleted
-          _lastChangedAt
           companiesUsersId
           __typename
         }
         PostAssets {
           nextToken
-          startedAt
           __typename
         }
         PostLocation {
           nextToken
-          startedAt
           __typename
         }
         updatedAt
-        _version
-        _deleted
-        _lastChangedAt
         usersPostsId
         companiesPostsId
         __typename
@@ -1758,21 +1432,14 @@ export const onDeletePostAssets = /* GraphQL */ `
         }
         PostAssets {
           nextToken
-          startedAt
           __typename
         }
         createdAt
         updatedAt
-        _version
-        _deleted
-        _lastChangedAt
         __typename
       }
       createdAt
       updatedAt
-      _version
-      _deleted
-      _lastChangedAt
       __typename
     }
   }
@@ -1803,9 +1470,6 @@ export const onCreatePostLocation = /* GraphQL */ `
           type
           createdAt
           updatedAt
-          _version
-          _deleted
-          _lastChangedAt
           __typename
         }
         User {
@@ -1817,26 +1481,18 @@ export const onCreatePostLocation = /* GraphQL */ `
           id
           createdAt
           updatedAt
-          _version
-          _deleted
-          _lastChangedAt
           companiesUsersId
           __typename
         }
         PostAssets {
           nextToken
-          startedAt
           __typename
         }
         PostLocation {
           nextToken
-          startedAt
           __typename
         }
         updatedAt
-        _version
-        _deleted
-        _lastChangedAt
         usersPostsId
         companiesPostsId
         __typename
@@ -1853,21 +1509,14 @@ export const onCreatePostLocation = /* GraphQL */ `
         type
         PostLocation {
           nextToken
-          startedAt
           __typename
         }
         createdAt
         updatedAt
-        _version
-        _deleted
-        _lastChangedAt
         __typename
       }
       createdAt
       updatedAt
-      _version
-      _deleted
-      _lastChangedAt
       __typename
     }
   }
@@ -1898,9 +1547,6 @@ export const onUpdatePostLocation = /* GraphQL */ `
           type
           createdAt
           updatedAt
-          _version
-          _deleted
-          _lastChangedAt
           __typename
         }
         User {
@@ -1912,26 +1558,18 @@ export const onUpdatePostLocation = /* GraphQL */ `
           id
           createdAt
           updatedAt
-          _version
-          _deleted
-          _lastChangedAt
           companiesUsersId
           __typename
         }
         PostAssets {
           nextToken
-          startedAt
           __typename
         }
         PostLocation {
           nextToken
-          startedAt
           __typename
         }
         updatedAt
-        _version
-        _deleted
-        _lastChangedAt
         usersPostsId
         companiesPostsId
         __typename
@@ -1948,21 +1586,14 @@ export const onUpdatePostLocation = /* GraphQL */ `
         type
         PostLocation {
           nextToken
-          startedAt
           __typename
         }
         createdAt
         updatedAt
-        _version
-        _deleted
-        _lastChangedAt
         __typename
       }
       createdAt
       updatedAt
-      _version
-      _deleted
-      _lastChangedAt
       __typename
     }
   }
@@ -1993,9 +1624,6 @@ export const onDeletePostLocation = /* GraphQL */ `
           type
           createdAt
           updatedAt
-          _version
-          _deleted
-          _lastChangedAt
           __typename
         }
         User {
@@ -2007,26 +1635,18 @@ export const onDeletePostLocation = /* GraphQL */ `
           id
           createdAt
           updatedAt
-          _version
-          _deleted
-          _lastChangedAt
           companiesUsersId
           __typename
         }
         PostAssets {
           nextToken
-          startedAt
           __typename
         }
         PostLocation {
           nextToken
-          startedAt
           __typename
         }
         updatedAt
-        _version
-        _deleted
-        _lastChangedAt
         usersPostsId
         companiesPostsId
         __typename
@@ -2043,21 +1663,14 @@ export const onDeletePostLocation = /* GraphQL */ `
         type
         PostLocation {
           nextToken
-          startedAt
           __typename
         }
         createdAt
         updatedAt
-        _version
-        _deleted
-        _lastChangedAt
         __typename
       }
       createdAt
       updatedAt
-      _version
-      _deleted
-      _lastChangedAt
       __typename
     }
   }
