@@ -102,8 +102,7 @@ type Posts @model {
   hour: String @default(value: " ")   # Se usa para los filtros del admin
   Company: Companies @belongsTo
   User: Users @belongsTo
-  fileImage: String @default(value: "")   # Imagen del Post
-  # PostAssets: [Assets] @manyToMany(relationName: "PostAssets")
+  PostAssets: [Assets] @manyToMany(relationName: "PostAssets")
   PostLocation: [Locations] @manyToMany(relationName: "PostLocation")
 }
 
@@ -117,12 +116,12 @@ enum PostType {
   none
 }
 
-#type Assets @model {
-#  id: ID!
-#  name: String!
-#  file: S3Object
-#  PostAssets: [Posts] @manyToMany(relationName: "PostAssets")
-#}
+type Assets @model {
+  id: ID!
+  name: String!
+  file: S3Object
+  PostAssets: [Posts] @manyToMany(relationName: "PostAssets")
+}
 
 
 ################################ ################################ 
@@ -142,11 +141,11 @@ type Geo {
   height: String
 }
 
-#type S3Object {
-#  bucket: String!
-#  region: String!
-#  key: String!
-#}
+type S3Object {
+  bucket: String!
+  region: String!
+  key: String!
+}
 
 enum PostState {
   pending

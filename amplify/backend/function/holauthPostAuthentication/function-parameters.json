@@ -17,9 +17,9 @@
     {
       "type": "ProjectLayer",
       "resourceName": "holabackendholalibLayer",
-      "env": "dev",
       "version": "Always choose latest version",
-      "isLatestVersionSelected": true
+      "isLatestVersionSelected": true,
+      "env": "production"
     }
   ]
 }

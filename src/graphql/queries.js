@@ -1,59 +1,6 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
-export const searchResumeDashboards = /* GraphQL */ `
-  query SearchResumeDashboards(
-    $filter: SearchableResumeDashboardFilterInput
-    $sort: [SearchableResumeDashboardSortInput]
-    $limit: Int
-    $nextToken: String
-    $from: Int
-    $aggregates: [SearchableResumeDashboardAggregationInput]
-  ) {
-    searchResumeDashboards(
-      filter: $filter
-      sort: $sort
-      limit: $limit
-      nextToken: $nextToken
-      from: $from
-      aggregates: $aggregates
-    ) {
-      items {
-        id
-        name
-        type
-        count
-        isAll
-        idLocation
-        day
-        month
-        year
-        createdAt
-        updatedAt
-        __typename
-      }
-      nextToken
-      total
-      aggregateItems {
-        name
-        result {
-          ... on SearchableAggregateScalarResult {
-            value
-          }
-          ... on SearchableAggregateBucketResult {
-            buckets {
-              key
-              doc_count
-              __typename
-            }
-          }
-        }
-        __typename
-      }
-      __typename
-    }
-  }
-`;
 export const getUsers = /* GraphQL */ `
   query GetUsers($id: ID!) {
     getUsers(id: $id) {
@@ -72,48 +19,11 @@ export const getUsers = /* GraphQL */ `
         id
         name
         type
-        Users {
-          nextToken
-          __typename
-        }
-        Posts {
-          nextToken
-          __typename
-        }
         createdAt
         updatedAt
         __typename
       }
-      PageUsers {
-        items {
-          id
-          usersId
-          pagesId
-          createdAt
-          updatedAt
-          __typename
-        }
-        nextToken
-        __typename
-      }
       Posts {
-        items {
-          id
-          name
-          publishingDate
-          createdAt
-          content
-          type
-          state
-          day
-          month
-          year
-          hour
-          updatedAt
-          usersPostsId
-          companiesPostsId
-          __typename
-        }
         nextToken
         __typename
       }
@@ -138,28 +48,6 @@ export const listUsers = /* GraphQL */ `
         validated
         hasAdminAccess
         perfil
-        Geo {
-          lat
-          long
-          height
-          __typename
-        }
-        Company {
-          id
-          name
-          type
-          createdAt
-          updatedAt
-          __typename
-        }
-        PageUsers {
-          nextToken
-          __typename
-        }
-        Posts {
-          nextToken
-          __typename
-        }
         id
         createdAt
         updatedAt
@@ -217,6 +105,7 @@ export const getResumeDashboard = /* GraphQL */ `
   query GetResumeDashboard($id: ID!) {
     getResumeDashboard(id: $id) {
       id
+      lastIdCreated
       name
       type
       count
@@ -244,6 +133,7 @@ export const listResumeDashboards = /* GraphQL */ `
     ) {
       items {
         id
+        lastIdCreated
         name
         type
         count
@@ -261,49 +151,29 @@ export const listResumeDashboards = /* GraphQL */ `
     }
   }
 `;
-export const getPages = /* GraphQL */ `
-  query GetPages($id: ID!) {
-    getPages(id: $id) {
+export const getResumeIdProcess = /* GraphQL */ `
+  query GetResumeIdProcess($id: ID!) {
+    getResumeIdProcess(id: $id) {
       id
-      name
-      url
-      ico
-      type
-      PageUsers {
-        items {
-          id
-          usersId
-          pagesId
-          createdAt
-          updatedAt
-          __typename
-        }
-        nextToken
-        __typename
-      }
       createdAt
       updatedAt
       __typename
     }
   }
 `;
-export const listPages = /* GraphQL */ `
-  query ListPages(
-    $filter: ModelPagesFilterInput
+export const listResumeIdProcesses = /* GraphQL */ `
+  query ListResumeIdProcesses(
+    $filter: ModelResumeIdProcessFilterInput
     $limit: Int
     $nextToken: String
   ) {
-    listPages(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    listResumeIdProcesses(
+      filter: $filter
+      limit: $limit
+      nextToken: $nextToken
+    ) {
       items {
         id
-        name
-        url
-        ico
-        type
-        PageUsers {
-          nextToken
-          __typename
-        }
         createdAt
         updatedAt
         __typename
@@ -320,39 +190,10 @@ export const getCompanies = /* GraphQL */ `
       name
       type
       Users {
-        items {
-          idUser
-          name
-          validated
-          hasAdminAccess
-          perfil
-          id
-          createdAt
-          updatedAt
-          companiesUsersId
-          __typename
-        }
         nextToken
         __typename
       }
       Posts {
-        items {
-          id
-          name
-          publishingDate
-          createdAt
-          content
-          type
-          state
-          day
-          month
-          year
-          hour
-          updatedAt
-          usersPostsId
-          companiesPostsId
-          __typename
-        }
         nextToken
         __typename
       }
@@ -373,14 +214,6 @@ export const listCompanies = /* GraphQL */ `
         id
         name
         type
-        Users {
-          nextToken
-          __typename
-        }
-        Posts {
-          nextToken
-          __typename
-        }
         createdAt
         updatedAt
         __typename
@@ -408,14 +241,6 @@ export const getPosts = /* GraphQL */ `
         id
         name
         type
-        Users {
-          nextToken
-          __typename
-        }
-        Posts {
-          nextToken
-          __typename
-        }
         createdAt
         updatedAt
         __typename
@@ -426,55 +251,14 @@ export const getPosts = /* GraphQL */ `
         validated
         hasAdminAccess
         perfil
-        Geo {
-          lat
-          long
-          height
-          __typename
-        }
-        Company {
-          id
-          name
-          type
-          createdAt
-          updatedAt
-          __typename
-        }
-        PageUsers {
-          nextToken
-          __typename
-        }
-        Posts {
-          nextToken
-          __typename
-        }
         id
         createdAt
         updatedAt
         companiesUsersId
         __typename
       }
-      PostAssets {
-        items {
-          id
-          postsId
-          assetsId
-          createdAt
-          updatedAt
-          __typename
-        }
-        nextToken
-        __typename
-      }
+      fileImage
       PostLocation {
-        items {
-          id
-          postsId
-          locationsId
-          createdAt
-          updatedAt
-          __typename
-        }
         nextToken
         __typename
       }
@@ -504,95 +288,10 @@ export const listPosts = /* GraphQL */ `
         month
         year
         hour
-        Company {
-          id
-          name
-          type
-          createdAt
-          updatedAt
-          __typename
-        }
-        User {
-          idUser
-          name
-          validated
-          hasAdminAccess
-          perfil
-          id
-          createdAt
-          updatedAt
-          companiesUsersId
-          __typename
-        }
-        PostAssets {
-          nextToken
-          __typename
-        }
-        PostLocation {
-          nextToken
-          __typename
-        }
+        fileImage
         updatedAt
         usersPostsId
         companiesPostsId
-        __typename
-      }
-      nextToken
-      __typename
-    }
-  }
-`;
-export const getAssets = /* GraphQL */ `
-  query GetAssets($id: ID!) {
-    getAssets(id: $id) {
-      id
-      name
-      file {
-        bucket
-        region
-        key
-        __typename
-      }
-      PostAssets {
-        items {
-          id
-          postsId
-          assetsId
-          createdAt
-          updatedAt
-          __typename
-        }
-        nextToken
-        __typename
-      }
-      createdAt
-      updatedAt
-      __typename
-    }
-  }
-`;
-export const listAssets = /* GraphQL */ `
-  query ListAssets(
-    $filter: ModelAssetsFilterInput
-    $limit: Int
-    $nextToken: String
-  ) {
-    listAssets(filter: $filter, limit: $limit, nextToken: $nextToken) {
-      items {
-        id
-        name
-        file {
-          bucket
-          region
-          key
-          __typename
-        }
-        PostAssets {
-          nextToken
-          __typename
-        }
-        createdAt
-        updatedAt
         __typename
       }
       nextToken
@@ -613,14 +312,6 @@ export const getLocations = /* GraphQL */ `
       }
       type
       PostLocation {
-        items {
-          id
-          postsId
-          locationsId
-          createdAt
-          updatedAt
-          __typename
-        }
         nextToken
         __typename
       }
@@ -640,237 +331,7 @@ export const listLocations = /* GraphQL */ `
       items {
         id
         name
-        Geo {
-          lat
-          long
-          height
-          __typename
-        }
         type
-        PostLocation {
-          nextToken
-          __typename
-        }
-        createdAt
-        updatedAt
-        __typename
-      }
-      nextToken
-      __typename
-    }
-  }
-`;
-export const getPageUsers = /* GraphQL */ `
-  query GetPageUsers($id: ID!) {
-    getPageUsers(id: $id) {
-      id
-      usersId
-      pagesId
-      users {
-        idUser
-        name
-        validated
-        hasAdminAccess
-        perfil
-        Geo {
-          lat
-          long
-          height
-          __typename
-        }
-        Company {
-          id
-          name
-          type
-          createdAt
-          updatedAt
-          __typename
-        }
-        PageUsers {
-          nextToken
-          __typename
-        }
-        Posts {
-          nextToken
-          __typename
-        }
-        id
-        createdAt
-        updatedAt
-        companiesUsersId
-        __typename
-      }
-      pages {
-        id
-        name
-        url
-        ico
-        type
-        PageUsers {
-          nextToken
-          __typename
-        }
-        createdAt
-        updatedAt
-        __typename
-      }
-      createdAt
-      updatedAt
-      __typename
-    }
-  }
-`;
-export const listPageUsers = /* GraphQL */ `
-  query ListPageUsers(
-    $filter: ModelPageUsersFilterInput
-    $limit: Int
-    $nextToken: String
-  ) {
-    listPageUsers(filter: $filter, limit: $limit, nextToken: $nextToken) {
-      items {
-        id
-        usersId
-        pagesId
-        users {
-          idUser
-          name
-          validated
-          hasAdminAccess
-          perfil
-          id
-          createdAt
-          updatedAt
-          companiesUsersId
-          __typename
-        }
-        pages {
-          id
-          name
-          url
-          ico
-          type
-          createdAt
-          updatedAt
-          __typename
-        }
-        createdAt
-        updatedAt
-        __typename
-      }
-      nextToken
-      __typename
-    }
-  }
-`;
-export const getPostAssets = /* GraphQL */ `
-  query GetPostAssets($id: ID!) {
-    getPostAssets(id: $id) {
-      id
-      postsId
-      assetsId
-      posts {
-        id
-        name
-        publishingDate
-        createdAt
-        content
-        type
-        state
-        day
-        month
-        year
-        hour
-        Company {
-          id
-          name
-          type
-          createdAt
-          updatedAt
-          __typename
-        }
-        User {
-          idUser
-          name
-          validated
-          hasAdminAccess
-          perfil
-          id
-          createdAt
-          updatedAt
-          companiesUsersId
-          __typename
-        }
-        PostAssets {
-          nextToken
-          __typename
-        }
-        PostLocation {
-          nextToken
-          __typename
-        }
-        updatedAt
-        usersPostsId
-        companiesPostsId
-        __typename
-      }
-      assets {
-        id
-        name
-        file {
-          bucket
-          region
-          key
-          __typename
-        }
-        PostAssets {
-          nextToken
-          __typename
-        }
-        createdAt
-        updatedAt
-        __typename
-      }
-      createdAt
-      updatedAt
-      __typename
-    }
-  }
-`;
-export const listPostAssets = /* GraphQL */ `
-  query ListPostAssets(
-    $filter: ModelPostAssetsFilterInput
-    $limit: Int
-    $nextToken: String
-  ) {
-    listPostAssets(filter: $filter, limit: $limit, nextToken: $nextToken) {
-      items {
-        id
-        postsId
-        assetsId
-        posts {
-          id
-          name
-          publishingDate
-          createdAt
-          content
-          type
-          state
-          day
-          month
-          year
-          hour
-          updatedAt
-          usersPostsId
-          companiesPostsId
-          __typename
-        }
-        assets {
-          id
-          name
-          createdAt
-          updatedAt
-          __typename
-        }
         createdAt
         updatedAt
         __typename
@@ -898,34 +359,7 @@ export const getPostLocation = /* GraphQL */ `
         month
         year
         hour
-        Company {
-          id
-          name
-          type
-          createdAt
-          updatedAt
-          __typename
-        }
-        User {
-          idUser
-          name
-          validated
-          hasAdminAccess
-          perfil
-          id
-          createdAt
-          updatedAt
-          companiesUsersId
-          __typename
-        }
-        PostAssets {
-          nextToken
-          __typename
-        }
-        PostLocation {
-          nextToken
-          __typename
-        }
+        fileImage
         updatedAt
         usersPostsId
         companiesPostsId
@@ -934,17 +368,7 @@ export const getPostLocation = /* GraphQL */ `
       locations {
         id
         name
-        Geo {
-          lat
-          long
-          height
-          __typename
-        }
         type
-        PostLocation {
-          nextToken
-          __typename
-        }
         createdAt
         updatedAt
         __typename
@@ -966,31 +390,6 @@ export const listPostLocations = /* GraphQL */ `
         id
         postsId
         locationsId
-        posts {
-          id
-          name
-          publishingDate
-          createdAt
-          content
-          type
-          state
-          day
-          month
-          year
-          hour
-          updatedAt
-          usersPostsId
-          companiesPostsId
-          __typename
-        }
-        locations {
-          id
-          name
-          type
-          createdAt
-          updatedAt
-          __typename
-        }
         createdAt
         updatedAt
         __typename
@@ -1000,18 +399,18 @@ export const listPostLocations = /* GraphQL */ `
     }
   }
 `;
-export const postsByIdAndDayAndMonthAndYear = /* GraphQL */ `
-  query PostsByIdAndDayAndMonthAndYear(
+export const postsByIdAndMonthAndYear = /* GraphQL */ `
+  query PostsByIdAndMonthAndYear(
     $id: ID!
-    $dayMonthYear: ModelPostsSearchByDiaMesAnoCompositeKeyConditionInput
+    $monthYear: ModelPostsSearchByDiaMesAnoCompositeKeyConditionInput
     $sortDirection: ModelSortDirection
     $filter: ModelPostsFilterInput
     $limit: Int
     $nextToken: String
   ) {
-    postsByIdAndDayAndMonthAndYear(
+    postsByIdAndMonthAndYear(
       id: $id
-      dayMonthYear: $dayMonthYear
+      monthYear: $monthYear
       sortDirection: $sortDirection
       filter: $filter
       limit: $limit
@@ -1029,241 +428,10 @@ export const postsByIdAndDayAndMonthAndYear = /* GraphQL */ `
         month
         year
         hour
-        Company {
-          id
-          name
-          type
-          createdAt
-          updatedAt
-          __typename
-        }
-        User {
-          idUser
-          name
-          validated
-          hasAdminAccess
-          perfil
-          id
-          createdAt
-          updatedAt
-          companiesUsersId
-          __typename
-        }
-        PostAssets {
-          nextToken
-          __typename
-        }
-        PostLocation {
-          nextToken
-          __typename
-        }
+        fileImage
         updatedAt
         usersPostsId
         companiesPostsId
-        __typename
-      }
-      nextToken
-      __typename
-    }
-  }
-`;
-export const pageUsersByUsersId = /* GraphQL */ `
-  query PageUsersByUsersId(
-    $usersId: ID!
-    $sortDirection: ModelSortDirection
-    $filter: ModelPageUsersFilterInput
-    $limit: Int
-    $nextToken: String
-  ) {
-    pageUsersByUsersId(
-      usersId: $usersId
-      sortDirection: $sortDirection
-      filter: $filter
-      limit: $limit
-      nextToken: $nextToken
-    ) {
-      items {
-        id
-        usersId
-        pagesId
-        users {
-          idUser
-          name
-          validated
-          hasAdminAccess
-          perfil
-          id
-          createdAt
-          updatedAt
-          companiesUsersId
-          __typename
-        }
-        pages {
-          id
-          name
-          url
-          ico
-          type
-          createdAt
-          updatedAt
-          __typename
-        }
-        createdAt
-        updatedAt
-        __typename
-      }
-      nextToken
-      __typename
-    }
-  }
-`;
-export const pageUsersByPagesId = /* GraphQL */ `
-  query PageUsersByPagesId(
-    $pagesId: ID!
-    $sortDirection: ModelSortDirection
-    $filter: ModelPageUsersFilterInput
-    $limit: Int
-    $nextToken: String
-  ) {
-    pageUsersByPagesId(
-      pagesId: $pagesId
-      sortDirection: $sortDirection
-      filter: $filter
-      limit: $limit
-      nextToken: $nextToken
-    ) {
-      items {
-        id
-        usersId
-        pagesId
-        users {
-          idUser
-          name
-          validated
-          hasAdminAccess
-          perfil
-          id
-          createdAt
-          updatedAt
-          companiesUsersId
-          __typename
-        }
-        pages {
-          id
-          name
-          url
-          ico
-          type
-          createdAt
-          updatedAt
-          __typename
-        }
-        createdAt
-        updatedAt
-        __typename
-      }
-      nextToken
-      __typename
-    }
-  }
-`;
-export const postAssetsByPostsId = /* GraphQL */ `
-  query PostAssetsByPostsId(
-    $postsId: ID!
-    $sortDirection: ModelSortDirection
-    $filter: ModelPostAssetsFilterInput
-    $limit: Int
-    $nextToken: String
-  ) {
-    postAssetsByPostsId(
-      postsId: $postsId
-      sortDirection: $sortDirection
-      filter: $filter
-      limit: $limit
-      nextToken: $nextToken
-    ) {
-      items {
-        id
-        postsId
-        assetsId
-        posts {
-          id
-          name
-          publishingDate
-          createdAt
-          content
-          type
-          state
-          day
-          month
-          year
-          hour
-          updatedAt
-          usersPostsId
-          companiesPostsId
-          __typename
-        }
-        assets {
-          id
-          name
-          createdAt
-          updatedAt
-          __typename
-        }
-        createdAt
-        updatedAt
-        __typename
-      }
-      nextToken
-      __typename
-    }
-  }
-`;
-export const postAssetsByAssetsId = /* GraphQL */ `
-  query PostAssetsByAssetsId(
-    $assetsId: ID!
-    $sortDirection: ModelSortDirection
-    $filter: ModelPostAssetsFilterInput
-    $limit: Int
-    $nextToken: String
-  ) {
-    postAssetsByAssetsId(
-      assetsId: $assetsId
-      sortDirection: $sortDirection
-      filter: $filter
-      limit: $limit
-      nextToken: $nextToken
-    ) {
-      items {
-        id
-        postsId
-        assetsId
-        posts {
-          id
-          name
-          publishingDate
-          createdAt
-          content
-          type
-          state
-          day
-          month
-          year
-          hour
-          updatedAt
-          usersPostsId
-          companiesPostsId
-          __typename
-        }
-        assets {
-          id
-          name
-          createdAt
-          updatedAt
-          __typename
-        }
-        createdAt
-        updatedAt
         __typename
       }
       nextToken
@@ -1290,31 +458,6 @@ export const postLocationsByPostsId = /* GraphQL */ `
         id
         postsId
         locationsId
-        posts {
-          id
-          name
-          publishingDate
-          createdAt
-          content
-          type
-          state
-          day
-          month
-          year
-          hour
-          updatedAt
-          usersPostsId
-          companiesPostsId
-          __typename
-        }
-        locations {
-          id
-          name
-          type
-          createdAt
-          updatedAt
-          __typename
-        }
         createdAt
         updatedAt
         __typename
@@ -1343,31 +486,6 @@ export const postLocationsByLocationsId = /* GraphQL */ `
         id
         postsId
         locationsId
-        posts {
-          id
-          name
-          publishingDate
-          createdAt
-          content
-          type
-          state
-          day
-          month
-          year
-          hour
-          updatedAt
-          usersPostsId
-          companiesPostsId
-          __typename
-        }
-        locations {
-          id
-          name
-          type
-          createdAt
-          updatedAt
-          __typename
-        }
         createdAt
         updatedAt
         __typename

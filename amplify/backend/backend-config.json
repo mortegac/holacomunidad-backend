@@ -1,27 +1,5 @@
 {
   "api": {
-    "AdminQueries": {
-      "authorizationType": "AMAZON_COGNITO_USER_POOLS",
-      "dependsOn": [
-        {
-          "attributes": [
-            "UserPoolId"
-          ],
-          "category": "auth",
-          "resourceName": "holauth"
-        },
-        {
-          "attributes": [
-            "Arn",
-            "Name"
-          ],
-          "category": "function",
-          "resourceName": "AdminQueries00f70391"
-        }
-      ],
-      "providerPlugin": "awscloudformation",
-      "service": "API Gateway"
-    },
     "holabackend": {
       "dependsOn": [],
       "output": {
@@ -29,9 +7,9 @@
           "additionalAuthenticationProviders": [],
           "defaultAuthentication": {
             "apiKeyConfig": {
-              "apiKeyExpirationDate": "2024-07-06T03:03:46.893Z",
+              "apiKeyExpirationDate": "2025-02-22T22:33:46.623Z",
               "apiKeyExpirationDays": 365,
-              "description": "365"
+              "description": "Access api key Production Enviroment"
             },
             "authenticationType": "API_KEY"
           }

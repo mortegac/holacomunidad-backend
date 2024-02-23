@@ -22,48 +22,11 @@ export const createUsers = /* GraphQL */ `
         id
         name
         type
-        Users {
-          nextToken
-          __typename
-        }
-        Posts {
-          nextToken
-          __typename
-        }
         createdAt
         updatedAt
         __typename
       }
-      PageUsers {
-        items {
-          id
-          usersId
-          pagesId
-          createdAt
-          updatedAt
-          __typename
-        }
-        nextToken
-        __typename
-      }
       Posts {
-        items {
-          id
-          name
-          publishingDate
-          createdAt
-          content
-          type
-          state
-          day
-          month
-          year
-          hour
-          updatedAt
-          usersPostsId
-          companiesPostsId
-          __typename
-        }
         nextToken
         __typename
       }
@@ -96,48 +59,11 @@ export const updateUsers = /* GraphQL */ `
         id
         name
         type
-        Users {
-          nextToken
-          __typename
-        }
-        Posts {
-          nextToken
-          __typename
-        }
         createdAt
         updatedAt
         __typename
       }
-      PageUsers {
-        items {
-          id
-          usersId
-          pagesId
-          createdAt
-          updatedAt
-          __typename
-        }
-        nextToken
-        __typename
-      }
       Posts {
-        items {
-          id
-          name
-          publishingDate
-          createdAt
-          content
-          type
-          state
-          day
-          month
-          year
-          hour
-          updatedAt
-          usersPostsId
-          companiesPostsId
-          __typename
-        }
         nextToken
         __typename
       }
@@ -170,48 +96,11 @@ export const deleteUsers = /* GraphQL */ `
         id
         name
         type
-        Users {
-          nextToken
-          __typename
-        }
-        Posts {
-          nextToken
-          __typename
-        }
         createdAt
         updatedAt
         __typename
       }
-      PageUsers {
-        items {
-          id
-          usersId
-          pagesId
-          createdAt
-          updatedAt
-          __typename
-        }
-        nextToken
-        __typename
-      }
       Posts {
-        items {
-          id
-          name
-          publishingDate
-          createdAt
-          content
-          type
-          state
-          day
-          month
-          year
-          hour
-          updatedAt
-          usersPostsId
-          companiesPostsId
-          __typename
-        }
         nextToken
         __typename
       }
@@ -290,6 +179,7 @@ export const createResumeDashboard = /* GraphQL */ `
   ) {
     createResumeDashboard(input: $input, condition: $condition) {
       id
+      lastIdCreated
       name
       type
       count
@@ -311,6 +201,7 @@ export const updateResumeDashboard = /* GraphQL */ `
   ) {
     updateResumeDashboard(input: $input, condition: $condition) {
       id
+      lastIdCreated
       name
       type
       count
@@ -332,6 +223,7 @@ export const deleteResumeDashboard = /* GraphQL */ `
   ) {
     deleteResumeDashboard(input: $input, condition: $condition) {
       id
+      lastIdCreated
       name
       type
       count
@@ -346,87 +238,39 @@ export const deleteResumeDashboard = /* GraphQL */ `
     }
   }
 `;
-export const createPages = /* GraphQL */ `
-  mutation CreatePages(
-    $input: CreatePagesInput!
-    $condition: ModelPagesConditionInput
+export const createResumeIdProcess = /* GraphQL */ `
+  mutation CreateResumeIdProcess(
+    $input: CreateResumeIdProcessInput!
+    $condition: ModelResumeIdProcessConditionInput
   ) {
-    createPages(input: $input, condition: $condition) {
+    createResumeIdProcess(input: $input, condition: $condition) {
       id
-      name
-      url
-      ico
-      type
-      PageUsers {
-        items {
-          id
-          usersId
-          pagesId
-          createdAt
-          updatedAt
-          __typename
-        }
-        nextToken
-        __typename
-      }
       createdAt
       updatedAt
       __typename
     }
   }
 `;
-export const updatePages = /* GraphQL */ `
-  mutation UpdatePages(
-    $input: UpdatePagesInput!
-    $condition: ModelPagesConditionInput
+export const updateResumeIdProcess = /* GraphQL */ `
+  mutation UpdateResumeIdProcess(
+    $input: UpdateResumeIdProcessInput!
+    $condition: ModelResumeIdProcessConditionInput
   ) {
-    updatePages(input: $input, condition: $condition) {
+    updateResumeIdProcess(input: $input, condition: $condition) {
       id
-      name
-      url
-      ico
-      type
-      PageUsers {
-        items {
-          id
-          usersId
-          pagesId
-          createdAt
-          updatedAt
-          __typename
-        }
-        nextToken
-        __typename
-      }
       createdAt
       updatedAt
       __typename
     }
   }
 `;
-export const deletePages = /* GraphQL */ `
-  mutation DeletePages(
-    $input: DeletePagesInput!
-    $condition: ModelPagesConditionInput
+export const deleteResumeIdProcess = /* GraphQL */ `
+  mutation DeleteResumeIdProcess(
+    $input: DeleteResumeIdProcessInput!
+    $condition: ModelResumeIdProcessConditionInput
   ) {
-    deletePages(input: $input, condition: $condition) {
+    deleteResumeIdProcess(input: $input, condition: $condition) {
       id
-      name
-      url
-      ico
-      type
-      PageUsers {
-        items {
-          id
-          usersId
-          pagesId
-          createdAt
-          updatedAt
-          __typename
-        }
-        nextToken
-        __typename
-      }
       createdAt
       updatedAt
       __typename
@@ -443,39 +287,10 @@ export const createCompanies = /* GraphQL */ `
       name
       type
       Users {
-        items {
-          idUser
-          name
-          validated
-          hasAdminAccess
-          perfil
-          id
-          createdAt
-          updatedAt
-          companiesUsersId
-          __typename
-        }
         nextToken
         __typename
       }
       Posts {
-        items {
-          id
-          name
-          publishingDate
-          createdAt
-          content
-          type
-          state
-          day
-          month
-          year
-          hour
-          updatedAt
-          usersPostsId
-          companiesPostsId
-          __typename
-        }
         nextToken
         __typename
       }
@@ -495,39 +310,10 @@ export const updateCompanies = /* GraphQL */ `
       name
       type
       Users {
-        items {
-          idUser
-          name
-          validated
-          hasAdminAccess
-          perfil
-          id
-          createdAt
-          updatedAt
-          companiesUsersId
-          __typename
-        }
         nextToken
         __typename
       }
       Posts {
-        items {
-          id
-          name
-          publishingDate
-          createdAt
-          content
-          type
-          state
-          day
-          month
-          year
-          hour
-          updatedAt
-          usersPostsId
-          companiesPostsId
-          __typename
-        }
         nextToken
         __typename
       }
@@ -547,39 +333,10 @@ export const deleteCompanies = /* GraphQL */ `
       name
       type
       Users {
-        items {
-          idUser
-          name
-          validated
-          hasAdminAccess
-          perfil
-          id
-          createdAt
-          updatedAt
-          companiesUsersId
-          __typename
-        }
         nextToken
         __typename
       }
       Posts {
-        items {
-          id
-          name
-          publishingDate
-          createdAt
-          content
-          type
-          state
-          day
-          month
-          year
-          hour
-          updatedAt
-          usersPostsId
-          companiesPostsId
-          __typename
-        }
         nextToken
         __typename
       }
@@ -610,14 +367,6 @@ export const createPosts = /* GraphQL */ `
         id
         name
         type
-        Users {
-          nextToken
-          __typename
-        }
-        Posts {
-          nextToken
-          __typename
-        }
         createdAt
         updatedAt
         __typename
@@ -628,55 +377,14 @@ export const createPosts = /* GraphQL */ `
         validated
         hasAdminAccess
         perfil
-        Geo {
-          lat
-          long
-          height
-          __typename
-        }
-        Company {
-          id
-          name
-          type
-          createdAt
-          updatedAt
-          __typename
-        }
-        PageUsers {
-          nextToken
-          __typename
-        }
-        Posts {
-          nextToken
-          __typename
-        }
         id
         createdAt
         updatedAt
         companiesUsersId
         __typename
       }
-      PostAssets {
-        items {
-          id
-          postsId
-          assetsId
-          createdAt
-          updatedAt
-          __typename
-        }
-        nextToken
-        __typename
-      }
+      fileImage
       PostLocation {
-        items {
-          id
-          postsId
-          locationsId
-          createdAt
-          updatedAt
-          __typename
-        }
         nextToken
         __typename
       }
@@ -708,14 +416,6 @@ export const updatePosts = /* GraphQL */ `
         id
         name
         type
-        Users {
-          nextToken
-          __typename
-        }
-        Posts {
-          nextToken
-          __typename
-        }
         createdAt
         updatedAt
         __typename
@@ -726,55 +426,14 @@ export const updatePosts = /* GraphQL */ `
         validated
         hasAdminAccess
         perfil
-        Geo {
-          lat
-          long
-          height
-          __typename
-        }
-        Company {
-          id
-          name
-          type
-          createdAt
-          updatedAt
-          __typename
-        }
-        PageUsers {
-          nextToken
-          __typename
-        }
-        Posts {
-          nextToken
-          __typename
-        }
         id
         createdAt
         updatedAt
         companiesUsersId
         __typename
       }
-      PostAssets {
-        items {
-          id
-          postsId
-          assetsId
-          createdAt
-          updatedAt
-          __typename
-        }
-        nextToken
-        __typename
-      }
+      fileImage
       PostLocation {
-        items {
-          id
-          postsId
-          locationsId
-          createdAt
-          updatedAt
-          __typename
-        }
         nextToken
         __typename
       }
@@ -806,14 +465,6 @@ export const deletePosts = /* GraphQL */ `
         id
         name
         type
-        Users {
-          nextToken
-          __typename
-        }
-        Posts {
-          nextToken
-          __typename
-        }
         createdAt
         updatedAt
         __typename
@@ -824,157 +475,20 @@ export const deletePosts = /* GraphQL */ `
         validated
         hasAdminAccess
         perfil
-        Geo {
-          lat
-          long
-          height
-          __typename
-        }
-        Company {
-          id
-          name
-          type
-          createdAt
-          updatedAt
-          __typename
-        }
-        PageUsers {
-          nextToken
-          __typename
-        }
-        Posts {
-          nextToken
-          __typename
-        }
         id
         createdAt
         updatedAt
         companiesUsersId
         __typename
       }
-      PostAssets {
-        items {
-          id
-          postsId
-          assetsId
-          createdAt
-          updatedAt
-          __typename
-        }
-        nextToken
-        __typename
-      }
+      fileImage
       PostLocation {
-        items {
-          id
-          postsId
-          locationsId
-          createdAt
-          updatedAt
-          __typename
-        }
         nextToken
         __typename
       }
       updatedAt
       usersPostsId
       companiesPostsId
-      __typename
-    }
-  }
-`;
-export const createAssets = /* GraphQL */ `
-  mutation CreateAssets(
-    $input: CreateAssetsInput!
-    $condition: ModelAssetsConditionInput
-  ) {
-    createAssets(input: $input, condition: $condition) {
-      id
-      name
-      file {
-        bucket
-        region
-        key
-        __typename
-      }
-      PostAssets {
-        items {
-          id
-          postsId
-          assetsId
-          createdAt
-          updatedAt
-          __typename
-        }
-        nextToken
-        __typename
-      }
-      createdAt
-      updatedAt
-      __typename
-    }
-  }
-`;
-export const updateAssets = /* GraphQL */ `
-  mutation UpdateAssets(
-    $input: UpdateAssetsInput!
-    $condition: ModelAssetsConditionInput
-  ) {
-    updateAssets(input: $input, condition: $condition) {
-      id
-      name
-      file {
-        bucket
-        region
-        key
-        __typename
-      }
-      PostAssets {
-        items {
-          id
-          postsId
-          assetsId
-          createdAt
-          updatedAt
-          __typename
-        }
-        nextToken
-        __typename
-      }
-      createdAt
-      updatedAt
-      __typename
-    }
-  }
-`;
-export const deleteAssets = /* GraphQL */ `
-  mutation DeleteAssets(
-    $input: DeleteAssetsInput!
-    $condition: ModelAssetsConditionInput
-  ) {
-    deleteAssets(input: $input, condition: $condition) {
-      id
-      name
-      file {
-        bucket
-        region
-        key
-        __typename
-      }
-      PostAssets {
-        items {
-          id
-          postsId
-          assetsId
-          createdAt
-          updatedAt
-          __typename
-        }
-        nextToken
-        __typename
-      }
-      createdAt
-      updatedAt
       __typename
     }
   }
@@ -995,14 +509,6 @@ export const createLocations = /* GraphQL */ `
       }
       type
       PostLocation {
-        items {
-          id
-          postsId
-          locationsId
-          createdAt
-          updatedAt
-          __typename
-        }
         nextToken
         __typename
       }
@@ -1028,14 +534,6 @@ export const updateLocations = /* GraphQL */ `
       }
       type
       PostLocation {
-        items {
-          id
-          postsId
-          locationsId
-          createdAt
-          updatedAt
-          __typename
-        }
         nextToken
         __typename
       }
@@ -1061,435 +559,7 @@ export const deleteLocations = /* GraphQL */ `
       }
       type
       PostLocation {
-        items {
-          id
-          postsId
-          locationsId
-          createdAt
-          updatedAt
-          __typename
-        }
         nextToken
-        __typename
-      }
-      createdAt
-      updatedAt
-      __typename
-    }
-  }
-`;
-export const createPageUsers = /* GraphQL */ `
-  mutation CreatePageUsers(
-    $input: CreatePageUsersInput!
-    $condition: ModelPageUsersConditionInput
-  ) {
-    createPageUsers(input: $input, condition: $condition) {
-      id
-      usersId
-      pagesId
-      users {
-        idUser
-        name
-        validated
-        hasAdminAccess
-        perfil
-        Geo {
-          lat
-          long
-          height
-          __typename
-        }
-        Company {
-          id
-          name
-          type
-          createdAt
-          updatedAt
-          __typename
-        }
-        PageUsers {
-          nextToken
-          __typename
-        }
-        Posts {
-          nextToken
-          __typename
-        }
-        id
-        createdAt
-        updatedAt
-        companiesUsersId
-        __typename
-      }
-      pages {
-        id
-        name
-        url
-        ico
-        type
-        PageUsers {
-          nextToken
-          __typename
-        }
-        createdAt
-        updatedAt
-        __typename
-      }
-      createdAt
-      updatedAt
-      __typename
-    }
-  }
-`;
-export const updatePageUsers = /* GraphQL */ `
-  mutation UpdatePageUsers(
-    $input: UpdatePageUsersInput!
-    $condition: ModelPageUsersConditionInput
-  ) {
-    updatePageUsers(input: $input, condition: $condition) {
-      id
-      usersId
-      pagesId
-      users {
-        idUser
-        name
-        validated
-        hasAdminAccess
-        perfil
-        Geo {
-          lat
-          long
-          height
-          __typename
-        }
-        Company {
-          id
-          name
-          type
-          createdAt
-          updatedAt
-          __typename
-        }
-        PageUsers {
-          nextToken
-          __typename
-        }
-        Posts {
-          nextToken
-          __typename
-        }
-        id
-        createdAt
-        updatedAt
-        companiesUsersId
-        __typename
-      }
-      pages {
-        id
-        name
-        url
-        ico
-        type
-        PageUsers {
-          nextToken
-          __typename
-        }
-        createdAt
-        updatedAt
-        __typename
-      }
-      createdAt
-      updatedAt
-      __typename
-    }
-  }
-`;
-export const deletePageUsers = /* GraphQL */ `
-  mutation DeletePageUsers(
-    $input: DeletePageUsersInput!
-    $condition: ModelPageUsersConditionInput
-  ) {
-    deletePageUsers(input: $input, condition: $condition) {
-      id
-      usersId
-      pagesId
-      users {
-        idUser
-        name
-        validated
-        hasAdminAccess
-        perfil
-        Geo {
-          lat
-          long
-          height
-          __typename
-        }
-        Company {
-          id
-          name
-          type
-          createdAt
-          updatedAt
-          __typename
-        }
-        PageUsers {
-          nextToken
-          __typename
-        }
-        Posts {
-          nextToken
-          __typename
-        }
-        id
-        createdAt
-        updatedAt
-        companiesUsersId
-        __typename
-      }
-      pages {
-        id
-        name
-        url
-        ico
-        type
-        PageUsers {
-          nextToken
-          __typename
-        }
-        createdAt
-        updatedAt
-        __typename
-      }
-      createdAt
-      updatedAt
-      __typename
-    }
-  }
-`;
-export const createPostAssets = /* GraphQL */ `
-  mutation CreatePostAssets(
-    $input: CreatePostAssetsInput!
-    $condition: ModelPostAssetsConditionInput
-  ) {
-    createPostAssets(input: $input, condition: $condition) {
-      id
-      postsId
-      assetsId
-      posts {
-        id
-        name
-        publishingDate
-        createdAt
-        content
-        type
-        state
-        day
-        month
-        year
-        hour
-        Company {
-          id
-          name
-          type
-          createdAt
-          updatedAt
-          __typename
-        }
-        User {
-          idUser
-          name
-          validated
-          hasAdminAccess
-          perfil
-          id
-          createdAt
-          updatedAt
-          companiesUsersId
-          __typename
-        }
-        PostAssets {
-          nextToken
-          __typename
-        }
-        PostLocation {
-          nextToken
-          __typename
-        }
-        updatedAt
-        usersPostsId
-        companiesPostsId
-        __typename
-      }
-      assets {
-        id
-        name
-        file {
-          bucket
-          region
-          key
-          __typename
-        }
-        PostAssets {
-          nextToken
-          __typename
-        }
-        createdAt
-        updatedAt
-        __typename
-      }
-      createdAt
-      updatedAt
-      __typename
-    }
-  }
-`;
-export const updatePostAssets = /* GraphQL */ `
-  mutation UpdatePostAssets(
-    $input: UpdatePostAssetsInput!
-    $condition: ModelPostAssetsConditionInput
-  ) {
-    updatePostAssets(input: $input, condition: $condition) {
-      id
-      postsId
-      assetsId
-      posts {
-        id
-        name
-        publishingDate
-        createdAt
-        content
-        type
-        state
-        day
-        month
-        year
-        hour
-        Company {
-          id
-          name
-          type
-          createdAt
-          updatedAt
-          __typename
-        }
-        User {
-          idUser
-          name
-          validated
-          hasAdminAccess
-          perfil
-          id
-          createdAt
-          updatedAt
-          companiesUsersId
-          __typename
-        }
-        PostAssets {
-          nextToken
-          __typename
-        }
-        PostLocation {
-          nextToken
-          __typename
-        }
-        updatedAt
-        usersPostsId
-        companiesPostsId
-        __typename
-      }
-      assets {
-        id
-        name
-        file {
-          bucket
-          region
-          key
-          __typename
-        }
-        PostAssets {
-          nextToken
-          __typename
-        }
-        createdAt
-        updatedAt
-        __typename
-      }
-      createdAt
-      updatedAt
-      __typename
-    }
-  }
-`;
-export const deletePostAssets = /* GraphQL */ `
-  mutation DeletePostAssets(
-    $input: DeletePostAssetsInput!
-    $condition: ModelPostAssetsConditionInput
-  ) {
-    deletePostAssets(input: $input, condition: $condition) {
-      id
-      postsId
-      assetsId
-      posts {
-        id
-        name
-        publishingDate
-        createdAt
-        content
-        type
-        state
-        day
-        month
-        year
-        hour
-        Company {
-          id
-          name
-          type
-          createdAt
-          updatedAt
-          __typename
-        }
-        User {
-          idUser
-          name
-          validated
-          hasAdminAccess
-          perfil
-          id
-          createdAt
-          updatedAt
-          companiesUsersId
-          __typename
-        }
-        PostAssets {
-          nextToken
-          __typename
-        }
-        PostLocation {
-          nextToken
-          __typename
-        }
-        updatedAt
-        usersPostsId
-        companiesPostsId
-        __typename
-      }
-      assets {
-        id
-        name
-        file {
-          bucket
-          region
-          key
-          __typename
-        }
-        PostAssets {
-          nextToken
-          __typename
-        }
-        createdAt
-        updatedAt
         __typename
       }
       createdAt
@@ -1519,34 +589,7 @@ export const createPostLocation = /* GraphQL */ `
         month
         year
         hour
-        Company {
-          id
-          name
-          type
-          createdAt
-          updatedAt
-          __typename
-        }
-        User {
-          idUser
-          name
-          validated
-          hasAdminAccess
-          perfil
-          id
-          createdAt
-          updatedAt
-          companiesUsersId
-          __typename
-        }
-        PostAssets {
-          nextToken
-          __typename
-        }
-        PostLocation {
-          nextToken
-          __typename
-        }
+        fileImage
         updatedAt
         usersPostsId
         companiesPostsId
@@ -1555,17 +598,7 @@ export const createPostLocation = /* GraphQL */ `
       locations {
         id
         name
-        Geo {
-          lat
-          long
-          height
-          __typename
-        }
         type
-        PostLocation {
-          nextToken
-          __typename
-        }
         createdAt
         updatedAt
         __typename
@@ -1597,34 +630,7 @@ export const updatePostLocation = /* GraphQL */ `
         month
         year
         hour
-        Company {
-          id
-          name
-          type
-          createdAt
-          updatedAt
-          __typename
-        }
-        User {
-          idUser
-          name
-          validated
-          hasAdminAccess
-          perfil
-          id
-          createdAt
-          updatedAt
-          companiesUsersId
-          __typename
-        }
-        PostAssets {
-          nextToken
-          __typename
-        }
-        PostLocation {
-          nextToken
-          __typename
-        }
+        fileImage
         updatedAt
         usersPostsId
         companiesPostsId
@@ -1633,17 +639,7 @@ export const updatePostLocation = /* GraphQL */ `
       locations {
         id
         name
-        Geo {
-          lat
-          long
-          height
-          __typename
-        }
         type
-        PostLocation {
-          nextToken
-          __typename
-        }
         createdAt
         updatedAt
         __typename
@@ -1675,34 +671,7 @@ export const deletePostLocation = /* GraphQL */ `
         month
         year
         hour
-        Company {
-          id
-          name
-          type
-          createdAt
-          updatedAt
-          __typename
-        }
-        User {
-          idUser
-          name
-          validated
-          hasAdminAccess
-          perfil
-          id
-          createdAt
-          updatedAt
-          companiesUsersId
-          __typename
-        }
-        PostAssets {
-          nextToken
-          __typename
-        }
-        PostLocation {
-          nextToken
-          __typename
-        }
+        fileImage
         updatedAt
         usersPostsId
         companiesPostsId
@@ -1711,17 +680,7 @@ export const deletePostLocation = /* GraphQL */ `
       locations {
         id
         name
-        Geo {
-          lat
-          long
-          height
-          __typename
-        }
         type
-        PostLocation {
-          nextToken
-          __typename
-        }
         createdAt
         updatedAt
         __typename

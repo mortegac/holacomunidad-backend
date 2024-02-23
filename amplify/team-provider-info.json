@@ -13,10 +13,6 @@
       "AuthTriggerTemplateURL": "https://s3.amazonaws.com/amplify-holabackend-dev-225935-deployment/amplify-cfn-templates/auth/auth-trigger-cloudformation-template.json"
     },
     "categories": {
-      "api": {
-        "holabackend": {},
-        "AdminQueries": {}
-      },
       "auth": {
         "holauth": {},
         "userPoolGroups": {}
@@ -41,8 +37,114 @@
         },
         "holabackendholalibLayer": {
           "deploymentBucketName": "amplify-holabackend-dev-225935-deployment",
-          "s3Key": "amplify-builds/holabackendholalibLayer-LambdaLayerVersion94fe4ebf-build.zip"
+          "s3Key": "amplify-builds/holabackendholalibLayer-LambdaLayerVersionded424b0-build.zip"
+        },
+        "holauth": {},
+        "triggerPostV2": {
+          "deploymentBucketName": "amplify-holabackend-dev-225935-deployment",
+          "s3Key": "amplify-builds/triggerPostV2-7377555a486f52573334-build.zip"
         }
+      },
+      "api": {
+        "holabackend": {}
+      }
+    }
+  },
+  "main": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-holabackend-main-124115-authRole",
+      "UnauthRoleArn": "arn:aws:iam::734538576188:role/amplify-holabackend-main-124115-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::734538576188:role/amplify-holabackend-main-124115-authRole",
+      "Region": "us-east-2",
+      "DeploymentBucketName": "amplify-holabackend-main-124115-deployment",
+      "UnauthRoleName": "amplify-holabackend-main-124115-unauthRole",
+      "StackName": "amplify-holabackend-main-124115",
+      "StackId": "arn:aws:cloudformation:us-east-2:734538576188:stack/amplify-holabackend-main-124115/ff243a90-6854-11ee-b82a-06a67798ceaf",
+      "AmplifyAppId": "d2pn12ald99zlf",
+      "AuthTriggerTemplateURL": "https://s3.amazonaws.com/amplify-holabackend-main-124115-deployment/amplify-cfn-templates/auth/auth-trigger-cloudformation-template.json"
+    },
+    "categories": {
+      "auth": {
+        "holauth": {},
+        "userPoolGroups": {}
+      },
+      "function": {
+        "AdminQueries00f70391": {
+          "deploymentBucketName": "amplify-holabackend-main-124115-deployment",
+          "s3Key": "amplify-builds/AdminQueries00f70391-474f517775527a355853-build.zip"
+        },
+        "holabackendholalibLayer": {
+          "deploymentBucketName": "amplify-holabackend-main-124115-deployment",
+          "s3Key": "amplify-builds/holabackendholalibLayer-LambdaLayerVersion55e34650-build.zip"
+        },
+        "holauthPostAuthentication": {
+          "deploymentBucketName": "amplify-holabackend-main-124115-deployment",
+          "s3Key": "amplify-builds/holauthPostAuthentication-6c6d6e7366636a6c5046-build.zip"
+        },
+        "holauthPostConfirmation": {
+          "GROUP": "users",
+          "deploymentBucketName": "amplify-holabackend-main-124115-deployment",
+          "s3Key": "amplify-builds/holauthPostConfirmation-6e2b6a57703435474b43-build.zip"
+        },
+        "holauthPreSignup": {
+          "deploymentBucketName": "amplify-holabackend-main-124115-deployment",
+          "s3Key": "amplify-builds/holauthPreSignup-426f4b78533950734868-build.zip"
+        },
+        "holauth": {},
+        "triggerPostV2": {}
+      },
+      "api": {
+        "holabackend": {}
+      },
+      "storage": {
+        "holaPost": {}
+      }
+    }
+  },
+  "production": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-holabackend-production-193111-authRole",
+      "UnauthRoleArn": "arn:aws:iam::734538576188:role/amplify-holabackend-production-193111-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::734538576188:role/amplify-holabackend-production-193111-authRole",
+      "Region": "us-east-2",
+      "DeploymentBucketName": "amplify-holabackend-production-193111-deployment",
+      "UnauthRoleName": "amplify-holabackend-production-193111-unauthRole",
+      "StackName": "amplify-holabackend-production-193111",
+      "StackId": "arn:aws:cloudformation:us-east-2:734538576188:stack/amplify-holabackend-production-193111/4191c4a0-d29b-11ee-9fdc-0689db520c3f",
+      "AmplifyAppId": "d2pn12ald99zlf",
+      "AuthTriggerTemplateURL": "https://s3.amazonaws.com/amplify-holabackend-production-193111-deployment/amplify-cfn-templates/auth/auth-trigger-cloudformation-template.json"
+    },
+    "categories": {
+      "auth": {
+        "holauth": {},
+        "userPoolGroups": {}
+      },
+      "function": {
+        "AdminQueries00f70391": {
+          "deploymentBucketName": "amplify-holabackend-production-193111-deployment",
+          "s3Key": "amplify-builds/AdminQueries00f70391-474f517775527a355853-build.zip"
+        },
+        "holabackendholalibLayer": {
+          "deploymentBucketName": "amplify-holabackend-production-193111-deployment",
+          "s3Key": "amplify-builds/holabackendholalibLayer-LambdaLayerVersion4176d84f-build.zip"
+        },
+        "holauthPostAuthentication": {
+          "deploymentBucketName": "amplify-holabackend-production-193111-deployment",
+          "s3Key": "amplify-builds/holauthPostAuthentication-6c6d6e7366636a6c5046-build.zip"
+        },
+        "holauthPostConfirmation": {
+          "GROUP": "users",
+          "deploymentBucketName": "amplify-holabackend-production-193111-deployment",
+          "s3Key": "amplify-builds/holauthPostConfirmation-6e2b6a57703435474b43-build.zip"
+        },
+        "holauthPreSignup": {
+          "deploymentBucketName": "amplify-holabackend-production-193111-deployment",
+          "s3Key": "amplify-builds/holauthPreSignup-426f4b78533950734868-build.zip"
+        },
+        "holauth": {}
+      },
+      "api": {
+        "holabackend": {}
       }
     }
   }

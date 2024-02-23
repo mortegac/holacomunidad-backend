@@ -1,10 +1,5 @@
 export type AmplifyDependentResourcesAttributes = {
   "api": {
-    "AdminQueries": {
-      "ApiId": "string",
-      "ApiName": "string",
-      "RootUrl": "string"
-    },
     "holabackend": {
       "GraphQLAPIEndpointOutput": "string",
       "GraphQLAPIIdOutput": "string",

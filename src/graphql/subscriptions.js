@@ -19,48 +19,11 @@ export const onCreateUsers = /* GraphQL */ `
         id
         name
         type
-        Users {
-          nextToken
-          __typename
-        }
-        Posts {
-          nextToken
-          __typename
-        }
         createdAt
         updatedAt
         __typename
       }
-      PageUsers {
-        items {
-          id
-          usersId
-          pagesId
-          createdAt
-          updatedAt
-          __typename
-        }
-        nextToken
-        __typename
-      }
       Posts {
-        items {
-          id
-          name
-          publishingDate
-          createdAt
-          content
-          type
-          state
-          day
-          month
-          year
-          hour
-          updatedAt
-          usersPostsId
-          companiesPostsId
-          __typename
-        }
         nextToken
         __typename
       }
@@ -90,48 +53,11 @@ export const onUpdateUsers = /* GraphQL */ `
         id
         name
         type
-        Users {
-          nextToken
-          __typename
-        }
-        Posts {
-          nextToken
-          __typename
-        }
         createdAt
         updatedAt
         __typename
       }
-      PageUsers {
-        items {
-          id
-          usersId
-          pagesId
-          createdAt
-          updatedAt
-          __typename
-        }
-        nextToken
-        __typename
-      }
       Posts {
-        items {
-          id
-          name
-          publishingDate
-          createdAt
-          content
-          type
-          state
-          day
-          month
-          year
-          hour
-          updatedAt
-          usersPostsId
-          companiesPostsId
-          __typename
-        }
         nextToken
         __typename
       }
@@ -161,48 +87,11 @@ export const onDeleteUsers = /* GraphQL */ `
         id
         name
         type
-        Users {
-          nextToken
-          __typename
-        }
-        Posts {
-          nextToken
-          __typename
-        }
         createdAt
         updatedAt
         __typename
       }
-      PageUsers {
-        items {
-          id
-          usersId
-          pagesId
-          createdAt
-          updatedAt
-          __typename
-        }
-        nextToken
-        __typename
-      }
       Posts {
-        items {
-          id
-          name
-          publishingDate
-          createdAt
-          content
-          type
-          state
-          day
-          month
-          year
-          hour
-          updatedAt
-          usersPostsId
-          companiesPostsId
-          __typename
-        }
         nextToken
         __typename
       }
@@ -277,6 +166,7 @@ export const onCreateResumeDashboard = /* GraphQL */ `
   ) {
     onCreateResumeDashboard(filter: $filter) {
       id
+      lastIdCreated
       name
       type
       count
@@ -297,6 +187,7 @@ export const onUpdateResumeDashboard = /* GraphQL */ `
   ) {
     onUpdateResumeDashboard(filter: $filter) {
       id
+      lastIdCreated
       name
       type
       count
@@ -317,6 +208,7 @@ export const onDeleteResumeDashboard = /* GraphQL */ `
   ) {
     onDeleteResumeDashboard(filter: $filter) {
       id
+      lastIdCreated
       name
       type
       count
@@ -331,78 +223,36 @@ export const onDeleteResumeDashboard = /* GraphQL */ `
     }
   }
 `;
-export const onCreatePages = /* GraphQL */ `
-  subscription OnCreatePages($filter: ModelSubscriptionPagesFilterInput) {
-    onCreatePages(filter: $filter) {
+export const onCreateResumeIdProcess = /* GraphQL */ `
+  subscription OnCreateResumeIdProcess(
+    $filter: ModelSubscriptionResumeIdProcessFilterInput
+  ) {
+    onCreateResumeIdProcess(filter: $filter) {
       id
-      name
-      url
-      ico
-      type
-      PageUsers {
-        items {
-          id
-          usersId
-          pagesId
-          createdAt
-          updatedAt
-          __typename
-        }
-        nextToken
-        __typename
-      }
       createdAt
       updatedAt
       __typename
     }
   }
 `;
-export const onUpdatePages = /* GraphQL */ `
-  subscription OnUpdatePages($filter: ModelSubscriptionPagesFilterInput) {
-    onUpdatePages(filter: $filter) {
+export const onUpdateResumeIdProcess = /* GraphQL */ `
+  subscription OnUpdateResumeIdProcess(
+    $filter: ModelSubscriptionResumeIdProcessFilterInput
+  ) {
+    onUpdateResumeIdProcess(filter: $filter) {
       id
-      name
-      url
-      ico
-      type
-      PageUsers {
-        items {
-          id
-          usersId
-          pagesId
-          createdAt
-          updatedAt
-          __typename
-        }
-        nextToken
-        __typename
-      }
       createdAt
       updatedAt
       __typename
     }
   }
 `;
-export const onDeletePages = /* GraphQL */ `
-  subscription OnDeletePages($filter: ModelSubscriptionPagesFilterInput) {
-    onDeletePages(filter: $filter) {
+export const onDeleteResumeIdProcess = /* GraphQL */ `
+  subscription OnDeleteResumeIdProcess(
+    $filter: ModelSubscriptionResumeIdProcessFilterInput
+  ) {
+    onDeleteResumeIdProcess(filter: $filter) {
       id
-      name
-      url
-      ico
-      type
-      PageUsers {
-        items {
-          id
-          usersId
-          pagesId
-          createdAt
-          updatedAt
-          __typename
-        }
-        nextToken
-        __typename
-      }
       createdAt
       updatedAt
       __typename
@@ -418,39 +268,10 @@ export const onCreateCompanies = /* GraphQL */ `
       name
       type
       Users {
-        items {
-          idUser
-          name
-          validated
-          hasAdminAccess
-          perfil
-          id
-          createdAt
-          updatedAt
-          companiesUsersId
-          __typename
-        }
         nextToken
         __typename
       }
       Posts {
-        items {
-          id
-          name
-          publishingDate
-          createdAt
-          content
-          type
-          state
-          day
-          month
-          year
-          hour
-          updatedAt
-          usersPostsId
-          companiesPostsId
-          __typename
-        }
         nextToken
         __typename
       }
@@ -469,39 +290,10 @@ export const onUpdateCompanies = /* GraphQL */ `
       name
       type
       Users {
-        items {
-          idUser
-          name
-          validated
-          hasAdminAccess
-          perfil
-          id
-          createdAt
-          updatedAt
-          companiesUsersId
-          __typename
-        }
         nextToken
         __typename
       }
       Posts {
-        items {
-          id
-          name
-          publishingDate
-          createdAt
-          content
-          type
-          state
-          day
-          month
-          year
-          hour
-          updatedAt
-          usersPostsId
-          companiesPostsId
-          __typename
-        }
         nextToken
         __typename
       }
@@ -520,39 +312,10 @@ export const onDeleteCompanies = /* GraphQL */ `
       name
       type
       Users {
-        items {
-          idUser
-          name
-          validated
-          hasAdminAccess
-          perfil
-          id
-          createdAt
-          updatedAt
-          companiesUsersId
-          __typename
-        }
         nextToken
         __typename
       }
       Posts {
-        items {
-          id
-          name
-          publishingDate
-          createdAt
-          content
-          type
-          state
-          day
-          month
-          year
-          hour
-          updatedAt
-          usersPostsId
-          companiesPostsId
-          __typename
-        }
         nextToken
         __typename
       }
@@ -580,14 +343,6 @@ export const onCreatePosts = /* GraphQL */ `
         id
         name
         type
-        Users {
-          nextToken
-          __typename
-        }
-        Posts {
-          nextToken
-          __typename
-        }
         createdAt
         updatedAt
         __typename
@@ -598,55 +353,14 @@ export const onCreatePosts = /* GraphQL */ `
         validated
         hasAdminAccess
         perfil
-        Geo {
-          lat
-          long
-          height
-          __typename
-        }
-        Company {
-          id
-          name
-          type
-          createdAt
-          updatedAt
-          __typename
-        }
-        PageUsers {
-          nextToken
-          __typename
-        }
-        Posts {
-          nextToken
-          __typename
-        }
         id
         createdAt
         updatedAt
         companiesUsersId
         __typename
       }
-      PostAssets {
-        items {
-          id
-          postsId
-          assetsId
-          createdAt
-          updatedAt
-          __typename
-        }
-        nextToken
-        __typename
-      }
+      fileImage
       PostLocation {
-        items {
-          id
-          postsId
-          locationsId
-          createdAt
-          updatedAt
-          __typename
-        }
         nextToken
         __typename
       }
@@ -675,14 +389,6 @@ export const onUpdatePosts = /* GraphQL */ `
         id
         name
         type
-        Users {
-          nextToken
-          __typename
-        }
-        Posts {
-          nextToken
-          __typename
-        }
         createdAt
         updatedAt
         __typename
@@ -693,55 +399,14 @@ export const onUpdatePosts = /* GraphQL */ `
         validated
         hasAdminAccess
         perfil
-        Geo {
-          lat
-          long
-          height
-          __typename
-        }
-        Company {
-          id
-          name
-          type
-          createdAt
-          updatedAt
-          __typename
-        }
-        PageUsers {
-          nextToken
-          __typename
-        }
-        Posts {
-          nextToken
-          __typename
-        }
         id
         createdAt
         updatedAt
         companiesUsersId
         __typename
       }
-      PostAssets {
-        items {
-          id
-          postsId
-          assetsId
-          createdAt
-          updatedAt
-          __typename
-        }
-        nextToken
-        __typename
-      }
+      fileImage
       PostLocation {
-        items {
-          id
-          postsId
-          locationsId
-          createdAt
-          updatedAt
-          __typename
-        }
         nextToken
         __typename
       }
@@ -770,14 +435,6 @@ export const onDeletePosts = /* GraphQL */ `
         id
         name
         type
-        Users {
-          nextToken
-          __typename
-        }
-        Posts {
-          nextToken
-          __typename
-        }
         createdAt
         updatedAt
         __typename
@@ -788,148 +445,20 @@ export const onDeletePosts = /* GraphQL */ `
         validated
         hasAdminAccess
         perfil
-        Geo {
-          lat
-          long
-          height
-          __typename
-        }
-        Company {
-          id
-          name
-          type
-          createdAt
-          updatedAt
-          __typename
-        }
-        PageUsers {
-          nextToken
-          __typename
-        }
-        Posts {
-          nextToken
-          __typename
-        }
         id
         createdAt
         updatedAt
         companiesUsersId
         __typename
       }
-      PostAssets {
-        items {
-          id
-          postsId
-          assetsId
-          createdAt
-          updatedAt
-          __typename
-        }
-        nextToken
-        __typename
-      }
+      fileImage
       PostLocation {
-        items {
-          id
-          postsId
-          locationsId
-          createdAt
-          updatedAt
-          __typename
-        }
         nextToken
         __typename
       }
       updatedAt
       usersPostsId
       companiesPostsId
-      __typename
-    }
-  }
-`;
-export const onCreateAssets = /* GraphQL */ `
-  subscription OnCreateAssets($filter: ModelSubscriptionAssetsFilterInput) {
-    onCreateAssets(filter: $filter) {
-      id
-      name
-      file {
-        bucket
-        region
-        key
-        __typename
-      }
-      PostAssets {
-        items {
-          id
-          postsId
-          assetsId
-          createdAt
-          updatedAt
-          __typename
-        }
-        nextToken
-        __typename
-      }
-      createdAt
-      updatedAt
-      __typename
-    }
-  }
-`;
-export const onUpdateAssets = /* GraphQL */ `
-  subscription OnUpdateAssets($filter: ModelSubscriptionAssetsFilterInput) {
-    onUpdateAssets(filter: $filter) {
-      id
-      name
-      file {
-        bucket
-        region
-        key
-        __typename
-      }
-      PostAssets {
-        items {
-          id
-          postsId
-          assetsId
-          createdAt
-          updatedAt
-          __typename
-        }
-        nextToken
-        __typename
-      }
-      createdAt
-      updatedAt
-      __typename
-    }
-  }
-`;
-export const onDeleteAssets = /* GraphQL */ `
-  subscription OnDeleteAssets($filter: ModelSubscriptionAssetsFilterInput) {
-    onDeleteAssets(filter: $filter) {
-      id
-      name
-      file {
-        bucket
-        region
-        key
-        __typename
-      }
-      PostAssets {
-        items {
-          id
-          postsId
-          assetsId
-          createdAt
-          updatedAt
-          __typename
-        }
-        nextToken
-        __typename
-      }
-      createdAt
-      updatedAt
       __typename
     }
   }
@@ -949,14 +478,6 @@ export const onCreateLocations = /* GraphQL */ `
       }
       type
       PostLocation {
-        items {
-          id
-          postsId
-          locationsId
-          createdAt
-          updatedAt
-          __typename
-        }
         nextToken
         __typename
       }
@@ -981,14 +502,6 @@ export const onUpdateLocations = /* GraphQL */ `
       }
       type
       PostLocation {
-        items {
-          id
-          postsId
-          locationsId
-          createdAt
-          updatedAt
-          __typename
-        }
         nextToken
         __typename
       }
@@ -1013,429 +526,7 @@ export const onDeleteLocations = /* GraphQL */ `
       }
       type
       PostLocation {
-        items {
-          id
-          postsId
-          locationsId
-          createdAt
-          updatedAt
-          __typename
-        }
         nextToken
-        __typename
-      }
-      createdAt
-      updatedAt
-      __typename
-    }
-  }
-`;
-export const onCreatePageUsers = /* GraphQL */ `
-  subscription OnCreatePageUsers(
-    $filter: ModelSubscriptionPageUsersFilterInput
-  ) {
-    onCreatePageUsers(filter: $filter) {
-      id
-      usersId
-      pagesId
-      users {
-        idUser
-        name
-        validated
-        hasAdminAccess
-        perfil
-        Geo {
-          lat
-          long
-          height
-          __typename
-        }
-        Company {
-          id
-          name
-          type
-          createdAt
-          updatedAt
-          __typename
-        }
-        PageUsers {
-          nextToken
-          __typename
-        }
-        Posts {
-          nextToken
-          __typename
-        }
-        id
-        createdAt
-        updatedAt
-        companiesUsersId
-        __typename
-      }
-      pages {
-        id
-        name
-        url
-        ico
-        type
-        PageUsers {
-          nextToken
-          __typename
-        }
-        createdAt
-        updatedAt
-        __typename
-      }
-      createdAt
-      updatedAt
-      __typename
-    }
-  }
-`;
-export const onUpdatePageUsers = /* GraphQL */ `
-  subscription OnUpdatePageUsers(
-    $filter: ModelSubscriptionPageUsersFilterInput
-  ) {
-    onUpdatePageUsers(filter: $filter) {
-      id
-      usersId
-      pagesId
-      users {
-        idUser
-        name
-        validated
-        hasAdminAccess
-        perfil
-        Geo {
-          lat
-          long
-          height
-          __typename
-        }
-        Company {
-          id
-          name
-          type
-          createdAt
-          updatedAt
-          __typename
-        }
-        PageUsers {
-          nextToken
-          __typename
-        }
-        Posts {
-          nextToken
-          __typename
-        }
-        id
-        createdAt
-        updatedAt
-        companiesUsersId
-        __typename
-      }
-      pages {
-        id
-        name
-        url
-        ico
-        type
-        PageUsers {
-          nextToken
-          __typename
-        }
-        createdAt
-        updatedAt
-        __typename
-      }
-      createdAt
-      updatedAt
-      __typename
-    }
-  }
-`;
-export const onDeletePageUsers = /* GraphQL */ `
-  subscription OnDeletePageUsers(
-    $filter: ModelSubscriptionPageUsersFilterInput
-  ) {
-    onDeletePageUsers(filter: $filter) {
-      id
-      usersId
-      pagesId
-      users {
-        idUser
-        name
-        validated
-        hasAdminAccess
-        perfil
-        Geo {
-          lat
-          long
-          height
-          __typename
-        }
-        Company {
-          id
-          name
-          type
-          createdAt
-          updatedAt
-          __typename
-        }
-        PageUsers {
-          nextToken
-          __typename
-        }
-        Posts {
-          nextToken
-          __typename
-        }
-        id
-        createdAt
-        updatedAt
-        companiesUsersId
-        __typename
-      }
-      pages {
-        id
-        name
-        url
-        ico
-        type
-        PageUsers {
-          nextToken
-          __typename
-        }
-        createdAt
-        updatedAt
-        __typename
-      }
-      createdAt
-      updatedAt
-      __typename
-    }
-  }
-`;
-export const onCreatePostAssets = /* GraphQL */ `
-  subscription OnCreatePostAssets(
-    $filter: ModelSubscriptionPostAssetsFilterInput
-  ) {
-    onCreatePostAssets(filter: $filter) {
-      id
-      postsId
-      assetsId
-      posts {
-        id
-        name
-        publishingDate
-        createdAt
-        content
-        type
-        state
-        day
-        month
-        year
-        hour
-        Company {
-          id
-          name
-          type
-          createdAt
-          updatedAt
-          __typename
-        }
-        User {
-          idUser
-          name
-          validated
-          hasAdminAccess
-          perfil
-          id
-          createdAt
-          updatedAt
-          companiesUsersId
-          __typename
-        }
-        PostAssets {
-          nextToken
-          __typename
-        }
-        PostLocation {
-          nextToken
-          __typename
-        }
-        updatedAt
-        usersPostsId
-        companiesPostsId
-        __typename
-      }
-      assets {
-        id
-        name
-        file {
-          bucket
-          region
-          key
-          __typename
-        }
-        PostAssets {
-          nextToken
-          __typename
-        }
-        createdAt
-        updatedAt
-        __typename
-      }
-      createdAt
-      updatedAt
-      __typename
-    }
-  }
-`;
-export const onUpdatePostAssets = /* GraphQL */ `
-  subscription OnUpdatePostAssets(
-    $filter: ModelSubscriptionPostAssetsFilterInput
-  ) {
-    onUpdatePostAssets(filter: $filter) {
-      id
-      postsId
-      assetsId
-      posts {
-        id
-        name
-        publishingDate
-        createdAt
-        content
-        type
-        state
-        day
-        month
-        year
-        hour
-        Company {
-          id
-          name
-          type
-          createdAt
-          updatedAt
-          __typename
-        }
-        User {
-          idUser
-          name
-          validated
-          hasAdminAccess
-          perfil
-          id
-          createdAt
-          updatedAt
-          companiesUsersId
-          __typename
-        }
-        PostAssets {
-          nextToken
-          __typename
-        }
-        PostLocation {
-          nextToken
-          __typename
-        }
-        updatedAt
-        usersPostsId
-        companiesPostsId
-        __typename
-      }
-      assets {
-        id
-        name
-        file {
-          bucket
-          region
-          key
-          __typename
-        }
-        PostAssets {
-          nextToken
-          __typename
-        }
-        createdAt
-        updatedAt
-        __typename
-      }
-      createdAt
-      updatedAt
-      __typename
-    }
-  }
-`;
-export const onDeletePostAssets = /* GraphQL */ `
-  subscription OnDeletePostAssets(
-    $filter: ModelSubscriptionPostAssetsFilterInput
-  ) {
-    onDeletePostAssets(filter: $filter) {
-      id
-      postsId
-      assetsId
-      posts {
-        id
-        name
-        publishingDate
-        createdAt
-        content
-        type
-        state
-        day
-        month
-        year
-        hour
-        Company {
-          id
-          name
-          type
-          createdAt
-          updatedAt
-          __typename
-        }
-        User {
-          idUser
-          name
-          validated
-          hasAdminAccess
-          perfil
-          id
-          createdAt
-          updatedAt
-          companiesUsersId
-          __typename
-        }
-        PostAssets {
-          nextToken
-          __typename
-        }
-        PostLocation {
-          nextToken
-          __typename
-        }
-        updatedAt
-        usersPostsId
-        companiesPostsId
-        __typename
-      }
-      assets {
-        id
-        name
-        file {
-          bucket
-          region
-          key
-          __typename
-        }
-        PostAssets {
-          nextToken
-          __typename
-        }
-        createdAt
-        updatedAt
         __typename
       }
       createdAt
@@ -1464,34 +555,7 @@ export const onCreatePostLocation = /* GraphQL */ `
         month
         year
         hour
-        Company {
-          id
-          name
-          type
-          createdAt
-          updatedAt
-          __typename
-        }
-        User {
-          idUser
-          name
-          validated
-          hasAdminAccess
-          perfil
-          id
-          createdAt
-          updatedAt
-          companiesUsersId
-          __typename
-        }
-        PostAssets {
-          nextToken
-          __typename
-        }
-        PostLocation {
-          nextToken
-          __typename
-        }
+        fileImage
         updatedAt
         usersPostsId
         companiesPostsId
@@ -1500,17 +564,7 @@ export const onCreatePostLocation = /* GraphQL */ `
       locations {
         id
         name
-        Geo {
-          lat
-          long
-          height
-          __typename
-        }
         type
-        PostLocation {
-          nextToken
-          __typename
-        }
         createdAt
         updatedAt
         __typename
@@ -1541,34 +595,7 @@ export const onUpdatePostLocation = /* GraphQL */ `
         month
         year
         hour
-        Company {
-          id
-          name
-          type
-          createdAt
-          updatedAt
-          __typename
-        }
-        User {
-          idUser
-          name
-          validated
-          hasAdminAccess
-          perfil
-          id
-          createdAt
-          updatedAt
-          companiesUsersId
-          __typename
-        }
-        PostAssets {
-          nextToken
-          __typename
-        }
-        PostLocation {
-          nextToken
-          __typename
-        }
+        fileImage
         updatedAt
         usersPostsId
         companiesPostsId
@@ -1577,17 +604,7 @@ export const onUpdatePostLocation = /* GraphQL */ `
       locations {
         id
         name
-        Geo {
-          lat
-          long
-          height
-          __typename
-        }
         type
-        PostLocation {
-          nextToken
-          __typename
-        }
         createdAt
         updatedAt
         __typename
@@ -1618,34 +635,7 @@ export const onDeletePostLocation = /* GraphQL */ `
         month
         year
         hour
-        Company {
-          id
-          name
-          type
-          createdAt
-          updatedAt
-          __typename
-        }
-        User {
-          idUser
-          name
-          validated
-          hasAdminAccess
-          perfil
-          id
-          createdAt
-          updatedAt
-          companiesUsersId
-          __typename
-        }
-        PostAssets {
-          nextToken
-          __typename
-        }
-        PostLocation {
-          nextToken
-          __typename
-        }
+        fileImage
         updatedAt
         usersPostsId
         companiesPostsId
@@ -1654,17 +644,7 @@ export const onDeletePostLocation = /* GraphQL */ `
       locations {
         id
         name
-        Geo {
-          lat
-          long
-          height
-          __typename
-        }
         type
-        PostLocation {
-          nextToken
-          __typename
-        }
         createdAt
         updatedAt
         __typename
